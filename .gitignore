@@ -1,0 +1,18 @@
+# FastAPI backend
+# Virtual environment
+.venv/
+# Compiled Python files
+__pycache__/
+__pycache__/__pycache__/
+*.pyc
+*.pyo
+# Environment variables
+.env
+# Keys
+*.key
+# Documentation
+*.docx
+# Claude
+.claude/
+# Data directory (commit db.sqlite for demo; uncomment to ignore large files)
+# data/*.sqlite
