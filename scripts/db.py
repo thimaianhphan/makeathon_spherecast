@@ -1,3 +1,4 @@
+import json
 import re
 import sqlite3
 from pathlib import Path
@@ -183,6 +184,88 @@ def batch(product_sku: str) -> dict:
         "uncovered": sorted(uncovered),
         "suppliers": chosen_suppliers,
     }
+
+
+def get_supplier_products_enriched() -> list[dict]:
+    """Returns each (supplier, product) pair with nested price tiers and purity/quality."""
+    with _conn() as conn:
+        rows = conn.execute(
+            """
+            SELECT sp.SupplierId, sp.ProductId, s.Name AS SupplierName,
+                   p.SKU, sp.Purity, sp.Quality, sp.QualityScore, sp.QualityMetrics,
+                   spp.Quantity, spp.QuantityUnit, spp.Price, spp.Currency
+            FROM Supplier_Product sp
+            JOIN Supplier s ON s.Id = sp.SupplierId
+            JOIN Product p ON p.Id = sp.ProductId
+            LEFT JOIN Supplier_Product_Price spp
+                   ON spp.SupplierId = sp.SupplierId AND spp.ProductId = sp.ProductId
+            ORDER BY sp.SupplierId, sp.ProductId
+            """
+        )
+        products: dict[tuple, dict] = {}
+        for row in rows:
+            key = (row["SupplierId"], row["ProductId"])
+            if key not in products:
+                products[key] = {
+                    "SupplierId": row["SupplierId"],
+                    "ProductId": row["ProductId"],
+                    "SupplierName": row["SupplierName"],
+                    "SKU": row["SKU"],
+                    "Purity": row["Purity"],
+                    "Quality": row["Quality"],
+                    "QualityScore": row["QualityScore"],
+                    "quality_metrics": json.loads(row["QualityMetrics"]) if row["QualityMetrics"] else {},
+                    "prices": [],
+                }
+            if row["Price"] is not None:
+                products[key]["prices"].append({
+                    "quantity": row["Quantity"],
+                    "unit": row["QuantityUnit"],
+                    "price": row["Price"],
+                    "currency": row["Currency"],
+                })
+        return list(products.values())
+
+
+def upsert_supplier_product_prices(supplier_id: int, product_id: int, prices: list[dict]) -> None:
+    """Replaces all price tiers for a (supplier, product) pair."""
+    with _conn() as conn:
+        conn.execute(
+            "DELETE FROM Supplier_Product_Price WHERE SupplierId = ? AND ProductId = ?",
+            (supplier_id, product_id),
+        )
+        for p in prices:
+            conn.execute(
+                """INSERT INTO Supplier_Product_Price (SupplierId, ProductId, Quantity, QuantityUnit, Price, Currency)
+                   VALUES (?, ?, ?, ?, ?, ?)""",
+                (supplier_id, product_id, p.get("quantity"), p.get("unit"), p["price"], p.get("currency", "USD")),
+            )
+
+
+def get_processed_supplier_products() -> set[tuple[int, int]]:
+    """Returns (SupplierId, ProductId) pairs that have already been processed (Quality is set)."""
+    with _conn() as conn:
+        rows = conn.execute(
+            "SELECT SupplierId, ProductId FROM Supplier_Product WHERE Quality IS NOT NULL"
+        )
+        return {(r["SupplierId"], r["ProductId"]) for r in rows}
+
+
+def upsert_supplier_product_info(
+    supplier_id: int,
+    product_id: int,
+    purity: str | None,
+    quality: str | None,
+    quality_score: float | None = None,
+    quality_metrics: dict | None = None,
+) -> None:
+    with _conn() as conn:
+        conn.execute(
+            """UPDATE Supplier_Product
+               SET Purity = ?, Quality = ?, QualityScore = ?, QualityMetrics = ?
+               WHERE SupplierId = ? AND ProductId = ?""",
+            (purity, quality, quality_score, json.dumps(quality_metrics) if quality_metrics else None, supplier_id, product_id),
+        )
 
 
 def check_compliance(
