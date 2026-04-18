@@ -1,7 +1,7 @@
 from functools import reduce
 from typing import Callable
 
-from text2product import QUALITY_METRICS
+from text2product import COMPLIANCE_METRICS  # noqa: F401 — re-exported for callers
 
 
 def filter_products(products: list, filters: list[Callable]) -> list:
@@ -34,7 +34,7 @@ def quantity_filter(lo=None, hi=None) -> Callable:
 def purity_filter(lo=None, hi=None) -> Callable:
     """Passes if Purity ∈ [0,1] falls within [lo, hi]. Products with no purity pass through."""
     def f(p):
-        val = p.get("Purity")
+        val = p.get("purity")
         if val is None:
             return True
         return (lo is None or val >= lo) and (hi is None or val <= hi)
@@ -44,7 +44,7 @@ def purity_filter(lo=None, hi=None) -> Callable:
 def quality_score_filter(lo=None, hi=None) -> Callable:
     """Passes if QualityScore falls within [lo, hi] (0–1 scale). Products with no score pass through."""
     def f(p):
-        val = p.get("QualityScore")
+        val = p.get("quality_score")
         if val is None:
             return True
         return (lo is None or val >= lo) and (hi is None or val <= hi)
@@ -52,29 +52,29 @@ def quality_score_filter(lo=None, hi=None) -> Callable:
 
 
 def quality_metric_filter(metric: str, lo=None, hi=None) -> Callable:
-    """Passes if p['quality_metrics'][metric] falls within [lo, hi]. Missing values pass through.
+    """Passes if p['compliance'][metric] falls within [lo, hi]. Missing values pass through.
 
     Use lo for minimum-good metrics (identity_confidence, assay_potency, moisture_content).
     Use hi for maximum-limit metrics (heavy_metals, pesticide_residues, residual_solvents).
     microbial_limits: store 0.0 (fail) or 1.0 (pass) and filter with lo=1.0.
     """
     def f(p):
-        val = (p.get("quality_metrics") or {}).get(metric)
+        val = (p.get("compliance") or {}).get(metric)
         if val is None:
             return True
         return (lo is None or val >= lo) and (hi is None or val <= hi)
     return f
 
 
-# Convenience factory for each metric in QUALITY_METRICS: {metric}_filter(lo, hi).
+# Convenience factory for each metric in COMPLIANCE_METRICS: {metric}_filter(lo, hi).
 def _make_metric_filter(metric: str) -> Callable:
     def factory(lo=None, hi=None) -> Callable:
         return quality_metric_filter(metric, lo, hi)
     factory.__name__ = f"{metric}_filter"
-    factory.__doc__ = f"{metric}: {QUALITY_METRICS[metric]}"
+    factory.__doc__ = f"{metric}: {COMPLIANCE_METRICS[metric]}"
     return factory
 
-for _metric in QUALITY_METRICS:
+for _metric in COMPLIANCE_METRICS:
     globals()[f"{_metric}_filter"] = _make_metric_filter(_metric)
 
 
@@ -83,11 +83,11 @@ def make_filters(
     quantity_range: tuple = (None, None),
     purity_range: tuple = (None, None),
     quality_range: tuple = (None, None),
-    quality_metrics: dict[str, tuple] | None = None,
+    compliance: dict[str, tuple] | None = None,
 ) -> list[Callable]:
     """Builds a filter list from range tuples, skipping fully-unbounded ranges.
 
-    quality_metrics maps metric name -> (lo, hi) range, e.g.:
+    compliance maps metric name -> (lo, hi) range, e.g.:
         {
             "identity_confidence": (0.95, None),
             "assay_potency": (0.97, 1.03),
@@ -107,7 +107,7 @@ def make_filters(
         filters.append(purity_filter(*purity_range))
     if any(v is not None for v in quality_range):
         filters.append(quality_score_filter(*quality_range))
-    for metric, (lo, hi) in (quality_metrics or {}).items():
+    for metric, (lo, hi) in (compliance or {}).items():
         if lo is not None or hi is not None:
             filters.append(quality_metric_filter(metric, lo, hi))
     return filters

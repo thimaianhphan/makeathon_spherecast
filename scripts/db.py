@@ -9,7 +9,34 @@ DB_PATH = Path(__file__).parent.parent / "data" / "db.sqlite"
 def _conn():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    _migrate(conn)
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    existing = {r[1] for r in conn.execute("PRAGMA table_info(Supplier_Product)")}
+    for col, ddl in [
+        ("Purity",      "REAL"),
+        ("Quality",     "TEXT"),
+        ("QualityScore","REAL"),
+        ("Compliance",  "TEXT"),
+        ("ProcessedAt", "TEXT"),
+    ]:
+        if col not in existing:
+            conn.execute(f"ALTER TABLE Supplier_Product ADD COLUMN {col} {ddl}")
+    existing_price = {r[1] for r in conn.execute("PRAGMA table_info(Supplier_Product_Price)")}
+    if not existing_price:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS Supplier_Product_Price (
+                SupplierId   INTEGER NOT NULL,
+                ProductId    INTEGER NOT NULL,
+                Quantity     REAL,
+                QuantityUnit TEXT,
+                Price        REAL    NOT NULL,
+                Currency     TEXT    NOT NULL DEFAULT 'USD',
+                PRIMARY KEY (SupplierId, ProductId, Quantity, QuantityUnit)
+            )
+        """)
 
 
 def _normalize(s: str) -> str:
@@ -192,7 +219,7 @@ def get_supplier_products_enriched() -> list[dict]:
         rows = conn.execute(
             """
             SELECT sp.SupplierId, sp.ProductId, s.Name AS SupplierName,
-                   p.SKU, sp.Purity, sp.Quality, sp.QualityScore, sp.QualityMetrics,
+                   p.SKU, sp.Purity, sp.Quality, sp.QualityScore, sp.Compliance,
                    spp.Quantity, spp.QuantityUnit, spp.Price, spp.Currency
             FROM Supplier_Product sp
             JOIN Supplier s ON s.Id = sp.SupplierId
@@ -207,14 +234,14 @@ def get_supplier_products_enriched() -> list[dict]:
             key = (row["SupplierId"], row["ProductId"])
             if key not in products:
                 products[key] = {
-                    "SupplierId": row["SupplierId"],
-                    "ProductId": row["ProductId"],
-                    "SupplierName": row["SupplierName"],
-                    "SKU": row["SKU"],
-                    "Purity": row["Purity"],
-                    "Quality": row["Quality"],
-                    "QualityScore": row["QualityScore"],
-                    "quality_metrics": json.loads(row["QualityMetrics"]) if row["QualityMetrics"] else {},
+                    "supplier_id": row["SupplierId"],
+                    "product_id": row["ProductId"],
+                    "supplier_name": row["SupplierName"],
+                    "sku": row["SKU"],
+                    "purity": row["Purity"],
+                    "quality": row["Quality"],
+                    "quality_score": row["QualityScore"],
+                    "compliance": json.loads(row["Compliance"]) if row["Compliance"] else {},
                     "prices": [],
                 }
             if row["Price"] is not None:
@@ -243,10 +270,10 @@ def upsert_supplier_product_prices(supplier_id: int, product_id: int, prices: li
 
 
 def get_processed_supplier_products() -> set[tuple[int, int]]:
-    """Returns (SupplierId, ProductId) pairs that have already been processed (Quality is set)."""
+    """Returns (SupplierId, ProductId) pairs that have already been processed."""
     with _conn() as conn:
         rows = conn.execute(
-            "SELECT SupplierId, ProductId FROM Supplier_Product WHERE Quality IS NOT NULL"
+            "SELECT SupplierId, ProductId FROM Supplier_Product WHERE ProcessedAt IS NOT NULL"
         )
         return {(r["SupplierId"], r["ProductId"]) for r in rows}
 
@@ -254,17 +281,17 @@ def get_processed_supplier_products() -> set[tuple[int, int]]:
 def upsert_supplier_product_info(
     supplier_id: int,
     product_id: int,
-    purity: str | None,
+    purity: float | None,
     quality: str | None,
     quality_score: float | None = None,
-    quality_metrics: dict | None = None,
+    compliance: dict | None = None,
 ) -> None:
     with _conn() as conn:
         conn.execute(
             """UPDATE Supplier_Product
-               SET Purity = ?, Quality = ?, QualityScore = ?, QualityMetrics = ?
+               SET Purity = ?, Quality = ?, QualityScore = ?, Compliance = ?, ProcessedAt = datetime('now')
                WHERE SupplierId = ? AND ProductId = ?""",
-            (purity, quality, quality_score, json.dumps(quality_metrics) if quality_metrics else None, supplier_id, product_id),
+            (purity, quality, quality_score, json.dumps(compliance) if compliance else None, supplier_id, product_id),
         )
 
 
