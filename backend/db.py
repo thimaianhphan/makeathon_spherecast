@@ -93,15 +93,31 @@ def get_supplier_products(supplier_id: int | None = None) -> list[dict]:
         return [dict(r) for r in rows]
 
 
-def batch(bom_id: int) -> dict:
+def batch(product_sku: str) -> dict:
     """
     Assigns BOM components to the fewest possible suppliers using greedy set cover.
+    Input is the SKU of the produced (finished-good) component.
 
     Returns:
         assignments: {sku: supplier_name} for each covered component
         uncovered:   SKUs with no available supplier
         suppliers:   ordered list of chosen supplier names
     """
+    with _conn() as conn:
+        row = conn.execute(
+            """
+            SELECT b.Id AS BOMId
+            FROM BOM b
+            JOIN Product p ON p.Id = b.ProducedProductId
+            WHERE p.SKU = ?
+            """,
+            (product_sku,),
+        ).fetchone()
+
+    if not row:
+        return {"assignments": {}, "uncovered": [], "suppliers": []}
+
+    bom_id = row["BOMId"]
     components = get_bom_components(bom_id)
     if not components:
         return {"assignments": {}, "uncovered": [], "suppliers": []}
