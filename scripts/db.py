@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from pathlib import Path
 
@@ -8,6 +9,23 @@ def _conn():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+
+def _normalize(s: str) -> str:
+    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+
+def search_supplier(query: str) -> list[dict]:
+    """Case-insensitive search ignoring spaces and punctuation."""
+    norm = _normalize(query)
+    with _conn() as conn:
+        suppliers = [dict(r) for r in conn.execute("SELECT * FROM Supplier ORDER BY Name")]
+    return [s for s in suppliers if norm in _normalize(s["Name"]) or _normalize(s["Name"]) in norm]
+
+
+def set_supplier_homepage(supplier_id: int, homepage: str) -> None:
+    with _conn() as conn:
+        conn.execute("UPDATE Supplier SET Homepage = ? WHERE Id = ?", (homepage, supplier_id))
 
 
 def get_companies() -> list[dict]:
