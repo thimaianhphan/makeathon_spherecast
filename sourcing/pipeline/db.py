@@ -142,6 +142,29 @@ def get_supplier_products(supplier_id: int | None = None) -> list[dict]:
         return [dict(r) for r in rows]
 
 
+def _ingredient_name(sku: str) -> str:
+    """Extract the ingredient slug from RM-CXX-<name>-<8hex> SKUs."""
+    m = re.match(r"RM-C\d+-(.+)-[0-9a-f]{8}$", sku)
+    return m.group(1) if m else sku
+
+
+def _equiv_map(bom_skus: set[str], supplier_skus: set[str]) -> dict[str, str]:
+    """
+    Returns {supplier_sku: bom_sku} for every supplier SKU whose ingredient name
+    matches a BOM component ingredient name (same ingredient, different company/hash).
+    Exact-match SKUs are included too, so the map is the complete coverage lookup.
+    """
+    bom_by_name: dict[str, str] = {}
+    for sku in bom_skus:
+        bom_by_name[_ingredient_name(sku)] = sku  # last writer wins; names are unique per BOM
+    result: dict[str, str] = {}
+    for sku in supplier_skus:
+        bom_sku = bom_by_name.get(_ingredient_name(sku))
+        if bom_sku:
+            result[sku] = bom_sku
+    return result
+
+
 def batch(product_sku: str, filters: list | None = None) -> dict:
     """
     Assigns BOM components to the fewest possible suppliers using greedy set cover.
@@ -177,41 +200,40 @@ def batch(product_sku: str, filters: list | None = None) -> dict:
 
     skus = {c["ConsumedSKU"] for c in components}
 
+    # Build full enriched list (all supplier products), not just exact SKU matches,
+    # so equivalent products (same ingredient name, different company/hash) can cover BOM components.
+    all_enriched = get_supplier_products_enriched()
+    all_sp_skus = {p["sku"] for p in all_enriched}
+    equiv = _equiv_map(skus, all_sp_skus)  # supplier_sku → bom_sku
+
     if filters:
-        enriched = [p for p in get_supplier_products_enriched() if p["sku"] in skus]
+        eligible = [p for p in all_enriched if p["sku"] in equiv]
         for f in filters:
-            enriched = [p for p in enriched if f(p)]
-        supplier_skus: dict[str, set[str]] = {}
-        supplier_details: dict[str, dict[str, dict]] = {}
-        for p in enriched:
-            name = p["supplier_name"]
-            sku = p["sku"]
-            supplier_skus.setdefault(name, set()).add(sku)
-            supplier_details.setdefault(name, {})[sku] = {
-                "prices": p.get("prices") or [],
-                "purity": p.get("purity"),
-                "quality": p.get("quality"),
-                "quality_score": p.get("quality_score"),
-                "compliance": p.get("compliance") or {},
-            }
+            eligible = [p for p in eligible if f(p)]
     else:
-        placeholders = ",".join("?" * len(skus))
-        with _conn() as conn:
-            rows = conn.execute(
-                f"""
-                SELECT p.SKU, s.Name AS SupplierName
-                FROM Supplier_Product sp
-                JOIN Supplier s ON s.Id = sp.SupplierId
-                JOIN Product p ON p.Id = sp.ProductId
-                WHERE p.SKU IN ({placeholders})
-                ORDER BY s.Name
-                """,
-                list(skus),
-            )
-            supplier_skus = {}
-            for r in rows:
-                supplier_skus.setdefault(r["SupplierName"], set()).add(r["SKU"])
-        supplier_details = {}
+        eligible = [p for p in all_enriched if p["sku"] in equiv]
+
+    # Map supplier → set of BOM SKUs they can cover (via exact or equivalent products)
+    supplier_skus: dict[str, set[str]] = {}
+    # supplier → bom_sku → best detail (prefer exact match over equivalent)
+    supplier_details: dict[str, dict[str, dict]] = {}
+    for p in eligible:
+        sp_sku = p["sku"]
+        bom_sku = equiv[sp_sku]
+        name = p["supplier_name"]
+        supplier_skus.setdefault(name, set()).add(bom_sku)
+        detail = {
+            "prices": p.get("prices") or [],
+            "purity": p.get("purity"),
+            "quality": p.get("quality"),
+            "quality_score": p.get("quality_score"),
+            "compliance": p.get("compliance") or {},
+            "sourced_sku": sp_sku,  # actual supplier product used
+        }
+        # Prefer exact-match SKU over equivalent
+        existing = supplier_details.get(name, {}).get(bom_sku)
+        if existing is None or (sp_sku == bom_sku and existing.get("sourced_sku") != bom_sku):
+            supplier_details.setdefault(name, {})[bom_sku] = detail
 
     uncovered = set(skus)
     assignments: dict[str, dict] = {}
