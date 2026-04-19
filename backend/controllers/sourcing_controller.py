@@ -15,7 +15,7 @@ _SOURCING = Path(__file__).resolve().parent.parent.parent / "sourcing" / "pipeli
 if str(_SOURCING) not in sys.path:
     sys.path.insert(0, str(_SOURCING))
 
-from db import batch, get_boms  # noqa: E402
+from db import batch, get_boms, get_bom_components  # noqa: E402
 from filter_products import make_filters  # noqa: E402
 
 router = APIRouter()
@@ -29,6 +29,20 @@ class BatchRequest(BaseModel):
     quantity_max: float | None = None
     purity_min: float | None = None
     quality_min: float | None = None
+
+
+@router.get("/api/sourcing/bom/{sku:path}")
+async def get_bom(sku: str):
+    """Return BOM components for a finished-good SKU."""
+    try:
+        boms = get_boms()
+        bom = next((b for b in boms if b["ProducedSKU"] == sku), None)
+        if not bom:
+            return JSONResponse(status_code=404, content={"error": "BOM not found"})
+        components = get_bom_components(bom["BOMId"])
+        return [{"sku": c["ConsumedSKU"], "type": c["Type"]} for c in components]
+    except Exception as exc:
+        return JSONResponse(status_code=500, content={"error": str(exc)})
 
 
 @router.get("/api/sourcing/boms")
