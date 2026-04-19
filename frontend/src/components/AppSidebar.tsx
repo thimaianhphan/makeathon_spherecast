@@ -6,12 +6,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Layers,
+  PackageSearch,
 } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
   { title: "Analyze", url: "/", icon: Home },
   { title: "History", url: "/history", icon: Clock },
+  { title: "Sourcing", url: "/sourcing", icon: PackageSearch },
 ];
 
 export function AppSidebar() {
@@ -41,7 +43,8 @@ export function AppSidebar() {
       <nav className="flex-1 py-4 px-2 space-y-1">
         {navItems.map((item) => {
           const isActive = location.pathname === item.url ||
-            (item.url === "/" && location.pathname.startsWith("/analyze"));
+            (item.url === "/" && location.pathname.startsWith("/analyze")) ||
+            (item.url !== "/" && location.pathname.startsWith(item.url));
           return (
             <NavLink
               key={item.url}
