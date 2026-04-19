@@ -67,7 +67,9 @@ function EvidenceRow({
             <span className="text-xs font-medium text-foreground">{item.source_label}</span>
             <span className="text-[10px] text-muted-foreground">{config.label}</span>
           </div>
-          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.excerpt}</p>
+          {!isLlmOnly && item.excerpt && (
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.excerpt}</p>
+          )}
 
           <div className="mt-2 flex items-center gap-2">
             <span className="text-[10px] text-muted-foreground">Confidence</span>

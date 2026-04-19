@@ -429,6 +429,80 @@ export interface FinishedGoodAnalysis {
   analyzed_at: string;
 }
 
+// ── Raw-material Compliance Report (from service_compliance_checker) ────────
+
+export interface ComplianceSupplierInfo {
+  supplier_id: number;
+  supplier_name: string;
+}
+
+export interface ComplianceSupplierCheck {
+  supplier_id: number;
+  supplier_name: string;
+  supplier_match_status: "MATCHED_ALLOWLIST" | "NOT_IN_ALLOWLIST" | string;
+  official_website_known: boolean;
+  official_domain: string | null;
+  official_url: string | null;
+  message: string;
+}
+
+export interface ComplianceExternalEvidence {
+  source_url: string;
+  source_domain: string;
+  ingredient_name_match: boolean;
+  matched_terms: string[];
+  matched_snippets: string[];
+  confidence: "high" | "medium" | "low" | string;
+}
+
+export interface ComplianceRegulationReference {
+  rule_id: string;
+  title: string;
+  source_url: string;
+  matched_reason: string;
+  text: string;
+}
+
+export type RawMaterialComplianceStatus =
+  | "VALID_RAW_MATERIAL"
+  | "RISKY_RAW_MATERIAL"
+  | "INSUFFICIENT_EVIDENCE"
+  | string;
+
+export interface RawMaterialComplianceAssessment {
+  ingredient_id: number;
+  ingredient_sku: string;
+  normalized_name: string;
+  suppliers: ComplianceSupplierInfo[];
+  supplier_checks: ComplianceSupplierCheck[];
+  external_evidence: ComplianceExternalEvidence[];
+  regulation_references: ComplianceRegulationReference[];
+  status: RawMaterialComplianceStatus;
+  rationale: string[];
+}
+
+export type ProductComplianceOverallStatus =
+  | "VALID"
+  | "RISKY"
+  | "INSUFFICIENT_EVIDENCE"
+  | "UNKNOWN"
+  | string;
+
+export interface ProductComplianceReport {
+  finished_product: {
+    product_id: number;
+    sku: string | null;
+    type: string | null;
+    company_id: number | null;
+    company_name: string | null;
+  };
+  scrape_enabled: boolean;
+  overall_status: ProductComplianceOverallStatus;
+  summary: { total: number; valid: number; risky: number; insufficient: number };
+  raw_material_count: number;
+  results: RawMaterialComplianceAssessment[];
+}
+
 // ── Backend AgentFact (from registry) ───────────────────────────────────────
 
 export interface AgentFact {

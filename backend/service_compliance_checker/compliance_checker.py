@@ -29,25 +29,15 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+import time
 from dataclasses import dataclass, asdict
-from typing import Dict, List
+from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
-
-from compliance_config import (
-    ALLOWED_SUPPLIER_URLS,
-    ALLOWED_DOMAINS,
-    USER_AGENT,
-    SUPPLIER_ALLOWLIST,
-    OFFICIAL_REGULATIONS,
-    WEBSITE_EVIDENCE_KEYWORDS,
-    ALLERGEN_TERMS,
-    HAZARD_TERMS,
-)
 
 import requests
 from bs4 import BeautifulSoup
 
-from compliance_config import (
+from .compliance_config import (
     ALLOWED_SUPPLIER_URLS,
     ALLOWED_DOMAINS,
     USER_AGENT,
@@ -58,9 +48,18 @@ from compliance_config import (
     HAZARD_TERMS,
 )
 
-DB_PATH = r"data\db.sqlite"
+try:
+    from backend.config import SQLITE_DB_PATH as _DEFAULT_DB_PATH
+except Exception:
+    _DEFAULT_DB_PATH = r"data/db.sqlite"
+
+DB_PATH = _DEFAULT_DB_PATH
 TARGET_FINISHED_PRODUCT_ID = 14
 REQUEST_TIMEOUT_SECONDS = 20
+
+_PAGE_TEXT_CACHE: Dict[str, str] = {}
+_PAGE_CACHE_TS: float = 0.0
+_PAGE_CACHE_TTL_SECONDS = 15 * 60
 
 
 @dataclass
@@ -416,7 +415,17 @@ def assess_raw_material(
     )
 
 
-def load_allowlisted_supplier_pages() -> Dict[str, str]:
+def load_allowlisted_supplier_pages(use_cache: bool = True) -> Dict[str, str]:
+    global _PAGE_TEXT_CACHE, _PAGE_CACHE_TS
+
+    now = time.time()
+    if (
+        use_cache
+        and _PAGE_TEXT_CACHE
+        and (now - _PAGE_CACHE_TS) < _PAGE_CACHE_TTL_SECONDS
+    ):
+        return dict(_PAGE_TEXT_CACHE)
+
     page_text_by_url: Dict[str, str] = {}
 
     for url in ALLOWED_SUPPLIER_URLS:
@@ -425,12 +434,17 @@ def load_allowlisted_supplier_pages() -> Dict[str, str]:
         except Exception as exc:
             page_text_by_url[url] = f"__FETCH_ERROR__: {exc}"
 
+    if use_cache:
+        _PAGE_TEXT_CACHE = dict(page_text_by_url)
+        _PAGE_CACHE_TS = now
+
     return page_text_by_url
 
 
 def run_raw_material_checker(
     db_path: str,
-    finished_product_id: int
+    finished_product_id: int,
+    scrape: bool = True,
 ) -> List[RawMaterialAssessment]:
     conn = get_connection(db_path)
     try:
@@ -454,17 +468,98 @@ def run_raw_material_checker(
     finally:
         conn.close()
 
-    raw_page_text_by_url = load_allowlisted_supplier_pages()
-
-    page_text_by_url = {
-        url: text for url, text in raw_page_text_by_url.items()
-        if not text.startswith("__FETCH_ERROR__:")
-    }
+    if scrape:
+        raw_page_text_by_url = load_allowlisted_supplier_pages()
+        page_text_by_url = {
+            url: text for url, text in raw_page_text_by_url.items()
+            if not text.startswith("__FETCH_ERROR__:")
+        }
+    else:
+        page_text_by_url = {}
 
     return [
         assess_raw_material(raw_material=rm, page_text_by_url=page_text_by_url)
         for rm in raw_materials
     ]
+
+
+def _get_finished_product_meta(
+    db_path: str, finished_product_id: int
+) -> Optional[Dict[str, Any]]:
+    conn = get_connection(db_path)
+    try:
+        row = conn.execute(
+            """
+            SELECT p.Id AS product_id, p.SKU AS sku, p.Type AS type,
+                   p.CompanyId AS company_id, c.Name AS company_name
+            FROM Product p
+            LEFT JOIN Company c ON p.CompanyId = c.Id
+            WHERE p.Id = ?
+            """,
+            (finished_product_id,),
+        ).fetchone()
+    finally:
+        conn.close()
+    if not row:
+        return None
+    return dict(row)
+
+
+def _summarize_assessments(
+    assessments: List[RawMaterialAssessment],
+) -> Dict[str, int]:
+    valid = sum(1 for a in assessments if a.status == "VALID_RAW_MATERIAL")
+    risky = sum(1 for a in assessments if a.status == "RISKY_RAW_MATERIAL")
+    insufficient = sum(1 for a in assessments if a.status == "INSUFFICIENT_EVIDENCE")
+    return {
+        "total": len(assessments),
+        "valid": valid,
+        "risky": risky,
+        "insufficient": insufficient,
+    }
+
+
+def _overall_status(summary: Dict[str, int]) -> str:
+    if summary["total"] == 0:
+        return "UNKNOWN"
+    if summary["insufficient"] > 0:
+        return "INSUFFICIENT_EVIDENCE"
+    if summary["risky"] > 0:
+        return "RISKY"
+    return "VALID"
+
+
+def check_product_compliance(
+    finished_product_id: int,
+    scrape: bool = True,
+    db_path: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Service-level entrypoint. Returns a JSON-serializable compliance report."""
+    effective_db = db_path or DB_PATH
+    meta = _get_finished_product_meta(effective_db, finished_product_id) or {
+        "product_id": finished_product_id,
+        "sku": None,
+        "type": None,
+        "company_id": None,
+        "company_name": None,
+    }
+
+    assessments = run_raw_material_checker(
+        db_path=effective_db,
+        finished_product_id=finished_product_id,
+        scrape=scrape,
+    )
+
+    summary = _summarize_assessments(assessments)
+
+    return {
+        "finished_product": meta,
+        "scrape_enabled": scrape,
+        "overall_status": _overall_status(summary),
+        "summary": summary,
+        "raw_material_count": len(assessments),
+        "results": [asdict(a) for a in assessments],
+    }
 
 
 def assessments_to_json(assessments: List[RawMaterialAssessment]) -> str:

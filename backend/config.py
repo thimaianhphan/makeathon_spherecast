@@ -54,6 +54,7 @@ WEB_SEARCH_PROVIDER = os.environ.get("WEB_SEARCH_PROVIDER", "duckduckgo")  # duc
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "")
 HTTP_TIMEOUT_SECONDS = int(os.environ.get("HTTP_TIMEOUT_SECONDS", "8"))
 EVIDENCE_CACHE_TTL_HOURS = int(os.environ.get("EVIDENCE_CACHE_TTL_HOURS", "24"))
+SUPPLIER_PRICE_CACHE_TTL_HOURS = int(os.environ.get("SUPPLIER_PRICE_CACHE_TTL_HOURS", "168"))  # 7 days
 
 # Label vision (optional multimodal path)
 ENABLE_LABEL_VISION = os.environ.get("ENABLE_LABEL_VISION", "false").lower() in ("1", "true", "yes")

@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, Info, Loader2 } from "lucide-react";
+import { ArrowLeft, Info, Loader2, ShieldCheck } from "lucide-react";
 import { AppLayout } from "@/components/AppLayout";
 import { IngredientList } from "@/components/IngredientList";
 import { VariantCard, KeepCurrentCard } from "@/components/VariantCard";
 import { EvidencePanel } from "@/components/EvidencePanel";
+import { ComplianceDialog } from "@/components/ComplianceDialog";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -255,6 +256,7 @@ export default function AnalysisView() {
   const [hoveredVariantIdx, setHoveredVariantIdx] = useState<number | null>(null);
   const [activeEvidenceKey, setActiveEvidenceKey] = useState<string | null>(null);
   const [progressLines, setProgressLines] = useState<string[]>([]);
+  const [complianceOpen, setComplianceOpen] = useState(false);
 
   const companyNameRef = useRef("");
 
@@ -455,6 +457,15 @@ export default function AnalysisView() {
                 <Button
                   variant="outline"
                   size="sm"
+                  className="hidden sm:inline-flex h-7 px-2.5 text-[11px] gap-1.5"
+                  onClick={() => setComplianceOpen(true)}
+                >
+                  <ShieldCheck className="w-3 h-3" />
+                  Compliance check
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="hidden sm:inline-flex h-7 px-2.5 text-[11px]"
                   onClick={handleRerun}
                 >
@@ -561,6 +572,17 @@ export default function AnalysisView() {
           </>
         )}
       </div>
+
+      {id > 0 && (
+        <ComplianceDialog
+          open={complianceOpen}
+          onOpenChange={setComplianceOpen}
+          productId={id}
+          productSku={analysis?.finished_good_sku}
+          productName={analysis?.finished_good_name}
+          companyName={analysis?.company_name}
+        />
+      )}
     </AppLayout>
   );
 }

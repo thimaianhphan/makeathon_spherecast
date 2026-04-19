@@ -33,6 +33,33 @@ Page content:
 {content}"""
 
 
+SUPPLIER_SPEC_ONLY_PROMPT = """You are a data extraction assistant for CPG ingredient sourcing.
+This supplier does NOT publish public prices (RFQ-only). Do NOT attempt to infer or estimate prices.
+Extract ONLY specification and compliance data from the following webpage content.
+Return ONLY valid JSON with these exact keys (use null for missing values):
+
+{{
+  "claimed_certifications": [],
+  "country_of_origin": null,
+  "lead_time_days": null,
+  "red_flags": []
+}}
+
+Rules:
+- claimed_certifications: list of certification strings (e.g. ["ISO 22000", "Halal", "Kosher"])
+- country_of_origin: country name string (null if not found)
+- lead_time_days: lead time in days as integer (null if not found)
+- red_flags: list of red flag strings (recalls, sanctions, bankruptcy, quality issues)
+
+This is used for tier=="spec_only" suppliers where no public price exists. Never populate price fields.
+
+Supplier: {supplier_name}
+Product: {product_name}
+Page URL: {url}
+Page content:
+{content}"""
+
+
 JUDGE_REASONING_PROMPT = """You are a CPG procurement expert at Agnes. Write a concise 2-3 sentence
 explanation of the sourcing recommendation for the following case.
 

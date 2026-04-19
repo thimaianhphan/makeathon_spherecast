@@ -59,11 +59,7 @@ async def propose_equivalents(
     for rm, sim_score in top:
         evidence = EvidenceItem(
             source_type="llm_inference",
-            excerpt=(
-                f"Category: '{original_category}'. Both '{original['Name']}' and "
-                f"'{rm['Name']}' share this functional category (LLM batch classification). "
-                f"Name-similarity score: {sim_score:.2f}."
-            ),
+            excerpt="",
             confidence=max(0.4, sim_score),
             timestamp=now,
             claim=(
