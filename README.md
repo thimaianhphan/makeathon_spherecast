@@ -71,6 +71,15 @@ The compliance check evaluates raw materials of a finished product by combining 
 
 
 
+## 2 Step:
+## Batching
+
+- *Batching is planed for the future integrations*
+- It ensures better leverage for bette supplier leverage
+- Ensures improvement of teh quality
+- Reduces costs
+
+
 ## New API Endpoints
 - `GET /api/companies` — List all CPG companies from the database
 - `GET /api/boms` — List all BOMs (optionally filter by company_id)
