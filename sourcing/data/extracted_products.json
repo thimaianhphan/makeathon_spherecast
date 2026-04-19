@@ -1,0 +1,8160 @@
+[
+  {
+    "supplier_id": 9,
+    "product_id": 259,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C11-gelatin-capsule-bovine-42ef5483",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 372.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 292,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C14-gelatin-017eb28d",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 372.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 357,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C17-gelatin-45b7cd2c",
+    "purity": null,
+    "quality": "Kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 467.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 499.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 571.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 571.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 571.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 571.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 610.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 610.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 621.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 621.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 629.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 636.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 636.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 700.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 700.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 700.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 700.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 418,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C19-gelatin-33f6d946",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.13,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 450.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 505.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 513.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 517.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 546.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 558.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 585.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 612.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "capsules",
+        "price": 674.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 465,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C25-gelatin-121e19eb",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 50000.0,
+        "unit": "capsules",
+        "price": 776.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 527,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C30-gelatin-2e7ec9f6",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100000.0,
+        "unit": "Box",
+        "price": 686.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "Box",
+        "price": 768.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 100000.0,
+        "unit": "Box",
+        "price": 895.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 549,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C30-vegetarian-capsule-ea92a1d1",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 693.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 560,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C31-gelatin-64baa1c8",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 125000.0,
+        "unit": null,
+        "price": 638.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 634,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C37-gelatin-a40fdc3f",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 70000.0,
+        "unit": "capsules",
+        "price": 362.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 771,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C50-gelatin-e04eefe9",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 250000.0,
+        "unit": "capsules",
+        "price": 1293.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 801,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C52-gelatin-capsule-d73cae98",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 927.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 928.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 952.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 1122.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 1122.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 1122.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 887,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C57-gelatin-7989e661",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 250000.0,
+        "unit": "capsules",
+        "price": 1490.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 918,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C58-gelatin-c50b9920",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": 0.145,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 633.95,
+        "currency": "EUR"
+      },
+      {
+        "quantity": 75000.0,
+        "unit": "capsules",
+        "price": 904.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 9,
+    "product_id": 999,
+    "supplier_name": "Capsuline",
+    "sku": "RM-C62-gelatin-f333c686",
+    "purity": null,
+    "quality": "kosher",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 200000.0,
+        "unit": "capsules",
+        "price": 1034.95,
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 282,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C13-energy-support-botanicals-nutrients-4823efcb",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 582,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C33-ferment-media-c911f8c0",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 19.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 751,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C45-prebiotic-fiber-19375eea",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 820,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C52-performance-support-nutrients-165afec4",
+    "purity": 0.84,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.84,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 885,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C57-cultured-nutrients-5c87fee4",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 886,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C57-fruit-nutrients-b65036d4",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 906,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C57-vegetable-nutrients-4667fd2d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 963,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C60-organic-food-complex-83c82fa3",
+    "purity": null,
+    "quality": "feed grade",
+    "quality_score": 0.4,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 24,
+    "product_id": 964,
+    "supplier_name": "Nutra Blend",
+    "sku": "RM-C60-organic-food-complex-blend-20007d19",
+    "purity": null,
+    "quality": "organic",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 50.0,
+        "unit": "Lb Bags",
+        "price": 78.08,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 150,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C1-calcium-citrate-05c28cc3",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 27.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 160,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C2-ascorbic-acid-4823fabf",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 21.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 46.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 83.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 151.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 39.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 325.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 173,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C2-niacinamide-c27eb0fe",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 9.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 20.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 37.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 68.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 146.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 177,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C2-pyridoxine-hcl-0a843bcb",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 281.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 40.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 16.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 17.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 86.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 155.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 184,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C2-vitamin-a-palmitate-58b26912",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 48.68,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 69.3,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.88,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 14.85,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 26.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 250,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C9-zinc-oxide-d758de8e",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 78.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 112.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 6.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 11.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 24.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 43.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 257,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C10-vitamin-c-a3c07522",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.08,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 66.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 36.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 260,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C11-magnesium-glycinate-309625e9",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 7.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 265,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C12-calcium-carbonate-7423a5f4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 92.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 132.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 7.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 14.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 15.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 51.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 266,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C12-cholecalciferol-vitamin-d3-d24cbd0c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 2.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 281,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C13-b-vitamins-00134c85",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 9.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 284,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C13-vitamin-d-b89cc23f",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 300.0,
+        "unit": "softgels",
+        "price": 35.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 300,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-niacinamide-603dda4f",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.0,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 105.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 4.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 8.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 32.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 31.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 34.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 58.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 301,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-pantothenic-acid-9e8a871d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 0.28,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 303,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-riboflavin-cca38c81",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 56.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 80.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 7.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 17.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 26.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 29.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 31.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 305,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-thiamine-904ca673",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 35.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 136.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 306,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-a-72b32d59",
+    "purity": 0.01,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 86.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 14.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 15.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 26.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 48.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 307,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-b1-9fb2f65d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 74.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 10.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 41.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 309,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-b2-cad7cce6",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 147.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 21.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 81.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 310,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-b6-c130b713",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 8.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 18.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 32.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 59.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 127.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 230.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1000.0,
+        "unit": "grams",
+        "price": 415.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1500.0,
+        "unit": "grams",
+        "price": 594.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 311,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-c-e97cb4c7",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 11.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 13.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 24.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 44.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 750.0,
+        "unit": "grams",
+        "price": 63.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 312,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-d-0d97442e",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 600.0,
+        "unit": "softgels",
+        "price": 30.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 314,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C14-vitamin-k-8acc4148",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 18.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 327,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C15-pink-himalayan-salt-7f2aeceb",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 21.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 336,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-ascorbyl-palmitate-f401359d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 44.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 4.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 10.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 339,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-biotin-07291e5b",
+    "purity": 0.01,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 99.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 340,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-calcium-carbonate-164af619",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 116.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 17.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 19.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 35.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 64.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 344,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-chromium-chloride-ac386ae8",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 393.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 17.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 31.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 56.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 32.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 33.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 120.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 217.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 348,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-cupric-sulfate-38ac7927",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 116.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 166.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 18.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 35.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 64.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 349,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-cyanocobalamin-902cb05e",
+    "purity": 1.0,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 4000.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 5.0,
+        "unit": "grams",
+        "price": 62.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 106.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 228.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 413.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 749.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 350,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-d-calcium-pantothenate-b22e6b6d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 86.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 26.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 48.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 351,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-dicalcium-phosphate-a5ed9ed7",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 32.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 6.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 12.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 355,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-ferrous-fumarate-1bb7e62c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 24.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 7.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 13.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 356,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-folic-acid-6c8e8f26",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 138.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 2.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 5.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 10.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 19.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 42.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 76.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 370,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-nicotinamide-bcdfeba8",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 4.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 371,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-pantothenic-acid-cc467f0a",
+    "purity": 0.909,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 60.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 86.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 18.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 31.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 33.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 372,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-phytonadione-55621c1e",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 15.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 376,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-potassium-iodide-e373836a",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 60.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 18.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 33.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 378,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-retinyl-acetate-464fff68",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 72.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 103.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 10.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 40.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 379,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-riboflavin-1e96c616",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 295.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 5.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 23.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 42.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 90.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 163.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 383,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-sodium-ascorbate-f4dc2885",
+    "purity": 0.9885,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 62.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 36.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 386,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-sodium-selenite-733ab69c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 393,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-thiamine-3ad733ed",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 64.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 3.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 10.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 394,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-thiamine-mononitrate-b51b48ac",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 48.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 69.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 31.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 26.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 397,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-tricalcium-phosphate-431a4818",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 398,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-vitamin-a-8273c020",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 177.1,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 25.3,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 97.9,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 401,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-vitamin-c-44b4a0f7",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.9017,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 40.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 57.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 403,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-vitamin-e-d3ec2225",
+    "purity": 0.9710144927536232,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.9710144927536232,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 226.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 17.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 32.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 69.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 125.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 405,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-zinc-oxide-add96a17",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 31.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 44.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 24.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 27.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 17.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 406,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C17-dl-alpha-tocopherol-68b372d5",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 318.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 454.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 97.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 65.34,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 68.31,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 176.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 442,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C22-magnesium-citrate-086264b4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 68.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 37.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 443,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C22-magnesium-glycinate-946fc249",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 7.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 459,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C25-calcium-carbonate-4eb96085",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 18.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 27.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 10.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 471,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C25-potassium-chloride-f927469d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 43.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 474,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C25-vitamin-a-2910180c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 105.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 4.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 8.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 32.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 58.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 478,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C25-vitamin-e-4f4c99b8",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 250.0,
+        "unit": "ml",
+        "price": 76.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 485,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C26-potassium-chloride-414b5246",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 327.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 467.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 26.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 47.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 100.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 181.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 493,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C27-potassium-citrate-b91db2ed",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 64.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 19.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 31.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 34.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 35.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 497,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C27-sodium-citrate-08487851",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 105.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 4.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 8.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 32.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 58.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 502,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C27-vitamin-b6-pyridoxine-hydrochloride-bb52b75a",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 30.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 55.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 100.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 29.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 30.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 215.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 508,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C28-magnesium-citrate-d364c220",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 89.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 128.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 27.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 49.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 520,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C30-calcium-carbonate-dd9f47aa",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 219.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 313.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 10.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 18.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 31.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 67.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 121.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 531,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C30-magnesium-bisglycinate-c6e583c4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 50.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 71.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 7.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 15.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 30.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 33.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 27.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 532,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C30-magnesium-citrate-31b1d4da",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 7.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 533,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C30-magnesium-glycinate-ba21d239",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 40.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 15.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 554,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C30-vitamin-e-5cbd51e2",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 117.56,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 5.08,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 9.28,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 16.77,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 11.38,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 36.05,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 65.06,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 561,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C31-magnesium-glycinate-74e5e25d",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 35.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 50.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "gram",
+        "price": 4.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsule",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsule",
+        "price": 11.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "gram",
+        "price": 10.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "gram",
+        "price": 19.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 568,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-calcium-d-pantothenate-5db35528",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.95,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 83.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 11.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 14.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 25.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 46.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 569,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-calcium-citrate-2f9465c9",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 49.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 71.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 27.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 571,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-magnesium-citrate-199478da",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 26.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 38.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 573,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-niacin-6e777dec",
+    "purity": null,
+    "quality": "vegan",
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 29.46,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 4.24,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 8.09,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 8.67,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.05,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.37,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 575,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-potassium-citrate-ec7e555a",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 576,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-pyridoxine-hcl-b18e1d94",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 147.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 21.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 40.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 81.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 578,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C32-zinc-oxide-1bf96a0d",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 43.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 580,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C33-biotin-dd51a7e1",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.0,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 13.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 14.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 149.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 269.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 585,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C33-niacin-151277db",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 26.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 29.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 24.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1000.0,
+        "unit": "grams",
+        "price": 44.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1500.0,
+        "unit": "grams",
+        "price": 63.0,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 589,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C33-pantothenic-acid-39dfb546",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.0,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 123.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 17.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 11.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 37.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 68.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 593,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C33-thiamin-1c74da1a",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 150.0,
+        "unit": "grams",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 150.0,
+        "unit": "grams",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1000.0,
+        "unit": "grams",
+        "price": 45.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 599,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C33-vitamin-e-d3ce1b4f",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 40.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 57.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 607,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C35-calcium-carbonate-d0e0b4e2",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 40.7,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 611,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C35-potassium-gluconate-1edd6ca1",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 99.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 623,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-beta-carotene-4a5e8c4f",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 31.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 45.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 2.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 96.0,
+        "unit": "grams",
+        "price": 10.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 96.0,
+        "unit": "grams",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 4.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 240.0,
+        "unit": "grams",
+        "price": 26.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 240.0,
+        "unit": "grams",
+        "price": 29.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 17.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 624,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-biotin-2d59ee9a",
+    "purity": 0.95,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 7.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 18.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 19.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 51.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 92.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 625,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-calcium-carbonate-4d035065",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 32.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 35.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 627,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-chromium-chloride-29a65259",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 203.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 16.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 29.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 62.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 112.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 633,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-folic-acid-2bb2a34c",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 21.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 2.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 646,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-niacin-578ac50b",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.0,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 43.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 4.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 150.0,
+        "unit": "grams",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 150.0,
+        "unit": "grams",
+        "price": 25.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 648,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-pantothenic-acid-9279a870",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.63,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.6,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 37.16,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1000.0,
+        "unit": "grams",
+        "price": 77.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1500.0,
+        "unit": "grams",
+        "price": 95.48,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 650,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-potassium-iodide-f9b2b205",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 62.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 89.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 19.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 34.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 657,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-thiamin-34ea3d66",
+    "purity": 1.0,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1.0,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 69.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 2.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 11.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 21.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 38.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 658,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-thiamine-mononitrate-1795539a",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 5.0,
+        "unit": "grams",
+        "price": 10.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 16.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 33.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 63.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 115.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 32.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 33.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 246.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 444.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 660,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-vitamin-a-acetate-c9020dfa",
+    "purity": 0.95,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 89.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 128.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 27.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 49.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 665,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-vitamin-e-cf6cd7f8",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 35.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 7.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 24.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 27.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 668,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C37-zinc-oxide-b733fd8f",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 16.0,
+        "unit": "oz",
+        "price": 12.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 677,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C38-salt-bddf68d5",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 10.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 21.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 39.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 71.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 153.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 277.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 695,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C39-potassium-chloride-8ccbe8a7",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 1,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 41.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 22.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 696,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C39-sea-salt-ca9e7781",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 27.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 39.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 8.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 15.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 699,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-ascorbic-acid-vitamin-c-2db5a34b",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 26.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 38.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 240.0,
+        "unit": "capsules",
+        "price": 15.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 240.0,
+        "unit": "capsules",
+        "price": 18.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 14.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 702,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-cyanocobalamin-vitamin-b12-2048bd4e",
+    "purity": 0.01,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 125.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 2.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 9.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 17.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 38.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 69.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 703,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-d-alpha-tocopheryl-acetate-vitamin-e-4f0e2772",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 167.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 7.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 23.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 51.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 706,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-l-leucine-dc251fa2",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 7.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 707,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-l-valine-237d9405",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 708,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-magnesium-citrate-a5181724",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 64.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 710,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-pyridoxine-hydrochloride-vitamin-b6-3753727e",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 85.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 121.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 3.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 6.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 26.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 47.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 711,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C40-retinyl-palmitate-vitamin-a-037f1204",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 94.55,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilogram",
+        "price": 135.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 14.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 26.35,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 29.65,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 46.15,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 49.45,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 52.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 717,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C41-potassium-citrate-614cd5f0",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 38.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 54.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 35.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 38.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 21.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 743,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C44-vitamin-a-retinyl-palmitate-c8fb97b4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 38.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 54.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 21.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 744,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C44-vitamin-b12-methylcobalamin-5f1622cd",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 138.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 5.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 19.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 11.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "count",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 76.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 746,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C44-vitamin-e-alpha-tocopherol-0ac90371",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 84.69,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 89.09,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 748,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C44-zinc-zinc-bisglycinate-1d1aacc9",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 66.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 72.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 10.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 22.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 36.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 777,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C51-calcium-citrate-05013377",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 89.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 128.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 17.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 18.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 27.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 49.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 780,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C51-magnesium-citrate-cab42be9",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 160.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 12.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 22.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 16.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 17.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 49.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 88.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 785,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C51-potassium-citrate-2d946db4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 5.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 791,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C51-zinc-chelate-89f8dfbc",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 46.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 66.55,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.6,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 14.3,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.85,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 799,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C52-coenzyme-q10-2ac6b422",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 449.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 19.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 35.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 64.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 137.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 248.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 806,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C52-inositol-7e1bd408",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 89.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "ct",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "ct",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 27.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 31.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 49.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 813,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C52-magnesium-glycinate-18aefa48",
+    "purity": 1.0,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 45.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 64.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 25.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 28.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 833,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C52-vitamin-e-ba108fda",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 250.0,
+        "unit": null,
+        "price": 32.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 839,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C53-leucine-d14d0c88",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 6.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 13.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 23.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "ct",
+        "price": 26.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 25.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1000.0,
+        "unit": "grams",
+        "price": 45.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 845,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C54-organic-whey-protein-37daa164",
+    "purity": 0.85,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.8667,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 36.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 20.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 861,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C55-taurine-e1cf4b6c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 7.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 865,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C56-calcium-ascorbate-fca157d3",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 88.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 126.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 12.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 10.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 27.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 49.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 884,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C57-coq10-9d71a3b0",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 90.0,
+        "unit": "ct Softgels",
+        "price": 48.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 928,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-beta-carotene-90830a92",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 30.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 43.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 9.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 16.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 930,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-calcium-carbonate-690f19e0",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilograms",
+        "price": 56.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 80.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 78.0,
+        "unit": "grams",
+        "price": 12.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.0,
+        "currency": "USD"
+      },
+      {
+        "quantity": 195.0,
+        "unit": "grams",
+        "price": 29.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 17.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 31.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 934,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-cupric-sulfate-5e195820",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 59.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 84.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 18.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 32.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 942,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-manganese-sulfate-ef83585c",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 66.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 95.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 5.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 36.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 945,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-nicotinamide-c2fc9f74",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 124.15,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 17.71,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 38.02,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 68.87,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 946,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-phytonadione-9828ed92",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 40.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 23.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 26.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 949,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-retinyl-acetate-66d8f431",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 15.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "ct",
+        "price": 15.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "ct",
+        "price": 16.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 60.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 109.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 956,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-thiamine-mononitrate-9971bee4",
+    "purity": null,
+    "quality": "food grade",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": 0.5,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 60.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 8.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 18.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 27.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 30.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 33.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 957,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C59-zinc-oxide-b64ce7de",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 40.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.5,
+        "unit": "kilograms",
+        "price": 57.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 12.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 22.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 982,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-ascorbic-acid-vitamin-c-bafc417d",
+    "purity": 1.0,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 68.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 9.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 11.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 13.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 20.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 28.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 31.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 37.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 985,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-calcium-carbonate-f7674431",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": "1XL",
+        "price": 0.99,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "Large",
+        "price": 0.66,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "M",
+        "price": 0.61,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "S",
+        "price": 0.44,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "XS",
+        "price": 0.39,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 995,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-cyanocobalamin-vitamin-b12-64ceac07",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 5.0,
+        "unit": "grams",
+        "price": 57.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 10.0,
+        "unit": "grams",
+        "price": 95.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 203.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 367.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 664.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 1013,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-niacinamide-vitamin-b3-6eb51d3f",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 38.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 11.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 25.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "count",
+        "price": 28.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 21.25,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 1014,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-pantothenic-acid-e361dd4c",
+    "purity": 0.9,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 183.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 7.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 14.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 26.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 18.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 120.0,
+        "unit": "capsules",
+        "price": 20.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 56.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 101.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 1017,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-potassium-citrate-916cd876",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 5.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 1019,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-pyridoxine-hydrochloride-vitamin-b6-7b4a9792",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "kilogram",
+        "price": 120.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 25.0,
+        "unit": "grams",
+        "price": 5.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 50.0,
+        "unit": "grams",
+        "price": 9.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": 100.0,
+        "unit": "grams",
+        "price": 17.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "grams",
+        "price": 36.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 21.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 300.0,
+        "unit": "capsules",
+        "price": 24.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 500.0,
+        "unit": "grams",
+        "price": 66.95,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 28,
+    "product_id": 1033,
+    "supplier_name": "PureBulk",
+    "sku": "RM-C62-thiamin-3f27fbc4",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": "#1 Size",
+        "price": 17.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "Double Ought (Size 00)",
+        "price": 17.5,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": "Single Ought (Size 0)",
+        "price": 17.5,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 31,
+    "product_id": 741,
+    "supplier_name": "Source-Omega LLC",
+    "sku": "RM-C44-omega-3-dha-93196c59",
+    "purity": 1.0,
+    "quality": "organic",
+    "quality_score": 0.7,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 1.0,
+        "unit": "L",
+        "price": 296.25,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.0,
+        "unit": "L",
+        "price": 296.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 1.0,
+        "unit": "ea",
+        "price": 45.95,
+        "currency": "USD"
+      },
+      {
+        "quantity": 6.0,
+        "unit": "bottles",
+        "price": 224.75,
+        "currency": "USD"
+      },
+      {
+        "quantity": 250.0,
+        "unit": "mL",
+        "price": 98.75,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 37,
+    "product_id": 253,
+    "supplier_name": "Trace Minerals",
+    "sku": "RM-C10-concentrace-trace-minerals-4f4f68d2",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": 2.0,
+        "unit": "fl. oz",
+        "price": 17.99,
+        "currency": "USD"
+      },
+      {
+        "quantity": 8.0,
+        "unit": "fl. oz",
+        "price": 29.99,
+        "currency": "USD"
+      },
+      {
+        "quantity": 8.0,
+        "unit": "fl. oz",
+        "price": 39.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 37,
+    "product_id": 849,
+    "supplier_name": "Trace Minerals",
+    "sku": "RM-C55-concentrace-trace-minerals-d946a4e9",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 26.24,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 34.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "supplier_id": 37,
+    "product_id": 904,
+    "supplier_name": "Trace Minerals",
+    "sku": "RM-C57-trace-mineral-concentrate-74f28e46",
+    "purity": null,
+    "quality": null,
+    "quality_score": null,
+    "compliance": {
+      "identity_confidence": null,
+      "assay_potency": null,
+      "heavy_metals": null,
+      "pesticide_residues": null,
+      "microbial_limits": null,
+      "moisture_content": null,
+      "residual_solvents": null
+    },
+    "prices": [
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 10.49,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 11.19,
+        "currency": "USD"
+      },
+      {
+        "quantity": null,
+        "unit": null,
+        "price": 13.99,
+        "currency": "USD"
+      }
+    ]
+  }
+]
