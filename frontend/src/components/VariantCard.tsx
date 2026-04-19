@@ -61,7 +61,7 @@ export function VariantCard({
   onSelect,
   onEvidenceClick,
 }: VariantCardProps) {
-  const { scores, score_rationales, judge_decision, flags_for_human, evidence } = variant;
+  const { scores, score_rationales, judge_decision, evidence } = variant;
   const pillStyle = scorePillStyle(scores.composite, judge_decision);
 
   const isNeedsReview = judge_decision === "needs_review";
@@ -86,16 +86,6 @@ export function VariantCard({
       role="article"
       aria-label={`Variant ${variant.rank}: ${variant.substitute_name}`}
     >
-      {/* Needs-review banner */}
-      {isNeedsReview && (
-        <div className="mb-3 rounded bg-amber-50 border border-amber-200 px-3 py-1.5">
-          <p className="text-xs text-amber-700 font-medium">Flagged for human review</p>
-          {flags_for_human.map((f, i) => (
-            <p key={i} className="text-[11px] text-amber-600">{f}</p>
-          ))}
-        </div>
-      )}
-
       {/* Header row */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-2 min-w-0">

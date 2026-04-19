@@ -44,8 +44,16 @@ from backend.controllers.cascade_history_controller import router as cascade_his
 from backend.controllers.mcp_controller import router as mcp_router
 from backend.controllers.a2a_controller import router as a2a_router
 from backend.controllers.sourcing_controller import router as sourcing_router
+from backend.controllers.compliance_controller import router as compliance_router
 
 app = FastAPI(title="Agnes — AI Supply Chain Manager", version="2.0.0")
+
+
+@app.on_event("startup")
+async def _startup() -> None:
+    from backend.services.db_service import ensure_price_cache_table
+    ensure_price_cache_table()
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -67,6 +75,7 @@ app.include_router(cascade_history_router)
 app.include_router(mcp_router)
 app.include_router(a2a_router)
 app.include_router(sourcing_router)
+app.include_router(compliance_router)
 
 if os.environ.get("SERVE_FRONTEND", "").lower() in ("1", "true", "yes"):
     frontend_dist = Path(__file__).resolve().parent.parent / "frontend" / "dist"

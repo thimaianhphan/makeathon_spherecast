@@ -404,6 +404,7 @@ async def _classify_all(
 async def _batch_classify(materials: list[dict], ai_reason) -> dict[int, dict]:
     """Batched LLM classification with inter-batch delay to avoid 429s."""
     import asyncio
+    from backend.services.sourcing.sku_utils import material_name_from_sku
     batch_size = 30
     result: dict[int, dict] = {}
 
@@ -411,7 +412,8 @@ async def _batch_classify(materials: list[dict], ai_reason) -> dict[int, dict]:
         if batch_idx > 0:
             await asyncio.sleep(2)  # 2-second gap between batches to stay under RPM limit
         batch = materials[i: i + batch_size]
-        items = [{"Id": m["Id"], "Name": m["Name"], "SKU": m["SKU"]} for m in batch]
+        # Use clean human-readable names for LLM classification; Id remains the key.
+        items = [{"Id": m["Id"], "Name": material_name_from_sku(m["Name"]), "SKU": m["SKU"]} for m in batch]
         prompt = BATCH_CLASSIFICATION_PROMPT_TEMPLATE.format(
             materials_json=json.dumps(items, ensure_ascii=False)
         )
@@ -461,10 +463,7 @@ def _make_near_duplicate_candidate(
     )
     evidence = EvidenceItem(
         source_type="llm_inference",
-        excerpt=(
-            f"Near-duplicate name match: '{rm_a['Name']}' ↔ '{rm_b['Name']}' "
-            f"(similarity score: {sim_score:.0f}/100). Likely same ingredient with variant naming."
-        ),
+        excerpt="",
         confidence=sim_score / 100.0,
         timestamp=utc_now_iso(),
         claim=f"Name-similarity evidence: {rm_a['Name']} ≈ {rm_b['Name']}",

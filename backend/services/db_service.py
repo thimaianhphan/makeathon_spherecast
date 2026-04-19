@@ -176,6 +176,30 @@ def get_cross_company_demand() -> list[dict]:
     return result
 
 
+def ensure_price_cache_table() -> None:
+    with get_connection() as conn:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS Supplier_Price_Cache (
+                supplier_id         INTEGER NOT NULL,
+                product_id          INTEGER NOT NULL,
+                material_name       TEXT,
+                unit_price_eur      REAL,
+                currency_original   TEXT,
+                moq                 INTEGER,
+                lead_time_days      INTEGER,
+                certifications_json TEXT,
+                country_of_origin   TEXT,
+                red_flags_json      TEXT,
+                source_urls_json    TEXT,
+                source_type         TEXT NOT NULL,
+                confidence          REAL NOT NULL,
+                fetched_at          TEXT NOT NULL,
+                PRIMARY KEY (supplier_id, product_id)
+            )
+        """)
+        conn.commit()
+
+
 def get_raw_materials() -> list[dict]:
     """Return all products where Type = 'raw-material'."""
     with get_connection() as conn:

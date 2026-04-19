@@ -4,14 +4,27 @@ Supplier Scout sub-agent.
 For each candidate raw material:
   1. Queries the DB for suppliers that offer it.
   2. Ranks suppliers by scale (total products offered — crude proxy).
-  3. Web-searches + fetches the top 2-3 suppliers' pages.
-  4. Uses LLM to extract structured evidence (price, MOQ, certifications, flags).
-  5. Returns a SupplierEvidence record per (supplier, candidate) pair.
+  3. Consults the persistent Supplier_Price_Cache (warm_cache) before any HTTP.
+  4. Web-searches + fetches the top 2-3 suppliers' pages (only for non-cached, non-opaque).
+  5. Uses LLM to extract structured evidence (price, MOQ, certifications, flags).
+  6. Upserts result into Supplier_Price_Cache for future runs.
+  7. Returns a SupplierEvidence record per (supplier, candidate) pair scouted.
+
+Lookup order per (supplier, candidate):
+  1. run_cache  — cheapest, same-process in-memory.
+  2. warm_cache — persistent SQLite, pre-fetched as a batch before the loop.
+  3. live scrape — HTTP + LLM extraction.
+
+Tier handling:
+  - opaque    → short-circuit immediately to no_evidence (no HTTP, no LLM).
+  - full / full_3p → site-scoped query e.g. "site:bulksupplements.com {material}".
+  - spec_only → generic query + price-free SUPPLIER_SPEC_ONLY_PROMPT.
 
 Rules:
 - Never fabricates URLs. Only uses URLs returned by the search API.
 - If no search results return, returns a no_evidence record.
-- Caches every (supplier_id, candidate_product_id) result within the run.
+- Opaque no_evidence records are NOT written to the persistent cache.
+- Caches every non-opaque (supplier_id, candidate_product_id) result within the run.
 """
 
 from __future__ import annotations
@@ -22,7 +35,10 @@ from urllib.parse import urlparse
 from backend.schemas import SupplierEvidence
 from backend.time_utils import utc_now_iso
 from backend.services.sourcing import cache as run_cache
-from backend.services.sourcing.prompts import SUPPLIER_EXTRACTION_PROMPT
+from backend.services.sourcing.prompts import (
+    SUPPLIER_EXTRACTION_PROMPT,
+    SUPPLIER_SPEC_ONLY_PROMPT,
+)
 
 # How many suppliers to scout per candidate
 MAX_SUPPLIERS_PER_CANDIDATE = 3
@@ -59,29 +75,78 @@ async def scout_suppliers(
             "supplier_name": row["supplier_name"],
         })
 
-    all_evidence: list[SupplierEvidence] = []
+    # ── Collect all (supplier_id, product_id) pairs for batch warm-cache lookup ──
+    all_pairs: list[tuple[int, int]] = []
+    ranked_per_candidate: list[tuple[dict, list[dict]]] = []
     for candidate in candidates:
         pid = candidate["Id"]
         suppliers = product_supplier_map.get(pid, [])
         if not suppliers:
-            all_evidence.append(_no_evidence(0, "unknown", pid))
+            ranked_per_candidate.append((candidate, []))
             continue
-
-        # Sort by scale descending, take top N
         ranked = sorted(
             suppliers,
             key=lambda s: run_cache.get_supplier_scale(s["supplier_id"]),
             reverse=True,
         )[:MAX_SUPPLIERS_PER_CANDIDATE]
+        ranked_per_candidate.append((candidate, ranked))
+        for sup in ranked:
+            all_pairs.append((sup["supplier_id"], pid))
+
+    # Batch-fetch warm (persistent) cache; run_cache-hit pairs will be skipped below
+    from backend.services.sourcing import price_cache
+    warm_cache: dict[tuple[int, int], SupplierEvidence] = {}
+    if all_pairs:
+        try:
+            warm_cache = price_cache.get_many(all_pairs)
+        except Exception:
+            warm_cache = {}
+
+    # ── Main per-candidate loop ───────────────────────────────────────────────
+    all_evidence: list[SupplierEvidence] = []
+    for candidate, ranked in ranked_per_candidate:
+        pid = candidate["Id"]
+
+        if not ranked:
+            all_evidence.append(_no_evidence(0, "unknown", pid))
+            continue
 
         for sup in ranked:
-            cached = run_cache.get_scout(sup["supplier_id"], pid)
+            supplier_id = sup["supplier_id"]
+            supplier_name = sup["supplier_name"]
+
+            # 1. run_cache (cheapest)
+            cached = run_cache.get_scout(supplier_id, pid)
             if cached is not None:
                 all_evidence.append(cached)
                 continue
 
-            ev = await _scout_one(sup["supplier_id"], sup["supplier_name"], candidate)
-            run_cache.put_scout(sup["supplier_id"], pid, ev)
+            # 2. warm_cache (persistent SQLite, pre-fetched)
+            warm_hit = warm_cache.get((supplier_id, pid))
+            if warm_hit is not None:
+                # Mirror into run_cache so sibling pipelines in the same run benefit
+                run_cache.put_scout(supplier_id, pid, warm_hit)
+                all_evidence.append(warm_hit)
+                continue
+
+            # 3. Live scrape
+            ev = await _scout_one(supplier_id, supplier_name, candidate)
+            run_cache.put_scout(supplier_id, pid, ev)
+
+            # Upsert into persistent cache — but NEVER for opaque/no_evidence
+            if ev.source_type != "no_evidence":
+                from backend.services.sourcing import supplier_registry
+                from backend.services.sourcing.sku_utils import material_name_from_sku
+                access = supplier_registry.get_access(supplier_name)
+                tier = access["tier"] if access else "opaque"
+                if tier != "opaque":
+                    raw_sku = candidate.get("SKU") or candidate.get("Name", "")
+                    mat = material_name_from_sku(raw_sku)
+                    try:
+                        price_cache.put(ev, product_id=pid, material_name=mat)
+                    except Exception:
+                        pass  # non-fatal
+
             all_evidence.append(ev)
 
     return all_evidence
@@ -94,9 +159,28 @@ async def _scout_one(
 ) -> SupplierEvidence:
     from backend.services.retrieval.web_search import search
     from backend.services.retrieval.web_fetch import fetch_clean
+    from backend.services.sourcing import supplier_registry
+    from backend.services.sourcing.sku_utils import material_name_from_sku
 
-    product_name = candidate["Name"]
-    query = f'"{supplier_name}" "{product_name}" spec sheet OR price OR datasheet'
+    # ── Tier resolution ───────────────────────────────────────────────────────
+    access = supplier_registry.get_access(supplier_name)
+    tier = access["tier"] if access else "opaque"
+
+    # Short-circuit for opaque suppliers — no HTTP, no LLM
+    if tier == "opaque":
+        return _no_evidence(supplier_id, supplier_name, candidate["Id"])
+
+    raw_sku = candidate.get("SKU") or candidate.get("Name", "")
+    material_name = material_name_from_sku(raw_sku)
+
+    # ── Build tier-appropriate search query ───────────────────────────────────
+    if access and access.get("search_pattern"):
+        query = access["search_pattern"].format(material=material_name)
+    else:
+        # spec_only suppliers: no site: scope, no price terms
+        query = f'"{supplier_name}" "{material_name}" spec sheet OR datasheet'
+
+    price_expected = (tier != "spec_only")
     now = utc_now_iso()
 
     try:
@@ -124,7 +208,10 @@ async def _scout_one(
         if page.error or not page.content:
             continue
         source_urls.append(hit.url)
-        fields = await _extract_from_page(supplier_name, product_name, hit.url, page.content)
+        fields = await _extract_from_page(
+            supplier_name, material_name, hit.url, page.content,
+            price_expected=price_expected,
+        )
         # Merge: first non-null value wins per field
         for k, v in fields.items():
             if v and k not in extracted_fields:
@@ -159,11 +246,20 @@ async def _extract_from_page(
     product_name: str,
     url: str,
     content: str,
+    price_expected: bool = True,
 ) -> dict:
+    """
+    Extract structured evidence from a page.
+
+    When price_expected=False (tier=="spec_only"), uses SUPPLIER_SPEC_ONLY_PROMPT
+    to avoid wasting tokens on price fields the LLM cannot find, and forcibly
+    nulls price-related keys in the returned dict even if the LLM hallucinates.
+    """
     from backend.services.agent_service import ai_reason
     from backend.services.substitution_service import _parse_json
 
-    prompt = SUPPLIER_EXTRACTION_PROMPT.format(
+    template = SUPPLIER_EXTRACTION_PROMPT if price_expected else SUPPLIER_SPEC_ONLY_PROMPT
+    prompt = template.format(
         supplier_name=supplier_name,
         product_name=product_name,
         url=url,
@@ -175,8 +271,7 @@ async def _extract_from_page(
     except Exception:
         data = {}
 
-    # Type-coerce to prevent downstream failures
-    return {
+    result = {
         "unit_price_eur": _safe_float(data.get("unit_price_eur")),
         "currency_original": _safe_str(data.get("currency_original")),
         "moq": _safe_int(data.get("moq")),
@@ -185,6 +280,14 @@ async def _extract_from_page(
         "country_of_origin": _safe_str(data.get("country_of_origin")),
         "red_flags": _safe_list(data.get("red_flags")),
     }
+
+    # For spec_only: coerce price fields to None even if LLM hallucinated a value
+    if not price_expected:
+        result["unit_price_eur"] = None
+        result["currency_original"] = None
+        result["moq"] = None
+
+    return result
 
 
 def _no_evidence(supplier_id: int, supplier_name: str, product_id: int) -> SupplierEvidence:

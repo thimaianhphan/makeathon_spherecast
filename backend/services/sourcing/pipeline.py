@@ -83,8 +83,13 @@ async def _run(
         )
 
     # ── Stage 2: Supplier Scout ─────────────────────────────────────────────
+    from backend.services.sourcing.sku_utils import material_name_from_sku
     candidate_dicts = [
-        {"Id": c.substitute_product_id, "SKU": str(c.substitute_product_id), "Name": c.substitute_name}
+        {
+            "Id": c.substitute_product_id,
+            "SKU": str(c.substitute_product_id),
+            "Name": material_name_from_sku(c.substitute_name),
+        }
         for c in eq_candidates
     ]
     supplier_evidence: list[SupplierEvidence] = []
