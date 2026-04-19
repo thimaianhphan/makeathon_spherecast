@@ -6,6 +6,7 @@ import type {
   IngredientAnalysis,
   PipelineEvidenceItem,
   PipelineResult,
+  ProductComplianceReport,
   SourcingEvidenceItem,
   SubstitutionCandidate,
   SupplierEvidence,
@@ -67,6 +68,14 @@ export async function getFinishedGoods(): Promise<CatalogueProduct[]> {
 
 export function getBom(productId: number): Promise<BomData> {
   return fetchJSON(`/api/boms/${productId}`);
+}
+
+export function getProductCompliance(
+  productId: number,
+  options: { scrape?: boolean } = {},
+): Promise<ProductComplianceReport> {
+  const scrape = options.scrape ? "true" : "false";
+  return fetchJSON(`/api/compliance/${productId}?scrape=${scrape}`);
 }
 
 function normalizeSupports(claim: string | undefined, sourceType: string): string {

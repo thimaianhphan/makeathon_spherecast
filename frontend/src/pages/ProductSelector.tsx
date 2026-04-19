@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Search, ArrowRight, Package } from "lucide-react";
+import { Search, ArrowRight, Package, ShieldCheck } from "lucide-react";
 import { AppLayout } from "@/components/AppLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ComplianceDialog } from "@/components/ComplianceDialog";
 import {
   Command,
   CommandEmpty,
@@ -22,6 +23,7 @@ export default function ProductSelector() {
   const [selectedProduct, setSelectedProduct] = useState<CatalogueProduct | null>(null);
   const [bom, setBom] = useState<BomData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [complianceOpen, setComplianceOpen] = useState(false);
   const navigate = useNavigate();
 
   const lastId = localStorage.getItem(LAST_ANALYSIS_KEY);
@@ -180,14 +182,25 @@ export default function ProductSelector() {
         )}
 
         {/* CTA */}
-        <Button
-          className="w-full gap-2"
-          disabled={!selectedProduct}
-          onClick={handleAnalyze}
-        >
-          Analyze variants
-          <ArrowRight className="w-4 h-4" />
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Button
+            className="flex-1 gap-2"
+            disabled={!selectedProduct}
+            onClick={handleAnalyze}
+          >
+            Analyze variants
+            <ArrowRight className="w-4 h-4" />
+          </Button>
+          <Button
+            variant="outline"
+            className="sm:w-auto gap-2"
+            disabled={!selectedProduct}
+            onClick={() => setComplianceOpen(true)}
+          >
+            <ShieldCheck className="w-4 h-4" />
+            Compliance check
+          </Button>
+        </div>
 
         {/* Continue last analysis */}
         {lastId && lastId !== selectedProduct?.product_id && (
@@ -201,6 +214,17 @@ export default function ProductSelector() {
           </p>
         )}
       </div>
+
+      {selectedProduct && (
+        <ComplianceDialog
+          open={complianceOpen}
+          onOpenChange={setComplianceOpen}
+          productId={Number.parseInt(selectedProduct.product_id, 10)}
+          productSku={skuFor(selectedProduct)}
+          productName={productNameFor(selectedProduct)}
+          companyName={companyFor(selectedProduct)}
+        />
+      )}
     </AppLayout>
   );
 }
