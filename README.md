@@ -8,7 +8,7 @@ Agnes is an AI-native supply chain manager for CPG (Consumer Packaged Goods) com
 - Loads ingredient BOMs from a SQLite database (multiple companies and products)
 - Analyses cross-company raw material demand to identify consolidation opportunities
 - Uses LLM-based reasoning to detect functionally equivalent ingredient substitutions
-- Validates all substitution candidates against EU food regulations (EU 1333/2008, EU 1169/2011, EU 834/2007, EU 1829/2003, EU 1907/2006)
+- Validates substitution candidates against food regulations (EU 1169/2011, Codex HACCP)
 - Generates consolidated sourcing proposals with evidence trails and tradeoff analysis
 - Scores and ranks suppliers based on consolidation coverage and trust
 - Live agent messaging via SSE
@@ -47,11 +47,11 @@ The compliance check evaluates raw materials of a finished product by combining 
 7. **Extract evidence from supplier pages**
    - The system scans the page text for:
      - ingredient name matches
-     - predefined evidence keywords (e.g. allergens, quality indicators, composition terms)
+     - predefined evidence keywords (allergens, quality indicators, composition terms)
    - Relevant text snippets are extracted around matches for context.
 
 8. **Match with regulations**
-   - Check is made against regulations **EU_FIC_1169_2011 and CODEX_GPFH_HACCP**
+   - Check is made against **EU_FIC_1169_2011** (Regulation (EU) No 1169/2011 — food information to consumers) and **CODEX_GPFH_HACCP** (Codex General Principles of Food Hygiene)
 
 9. **Assign compliance status**
    - The final status is determined based on:
@@ -61,56 +61,92 @@ The compliance check evaluates raw materials of a finished product by combining 
 
 ## How the Quality check works
 
-- First most important quality certifications: 
-- Certificate of Kashruth (Kosher Certificate), Certificado Halal / Halal Certificate, Certificate of Analysis for Empty Gelatin Capsules (CoA), Certificate for Color and Flavor Capsules Formulation , Allergen Free Certificate (for empty hard bovine hide gelatin capsules)
-- The system loads required documentation, including Certificates of Analysis, Allergen Free declarations, and Halal or Kosher certificates
-- Some other checks ass Concentration of the product(active product ration)
+- Quality grade is extracted from supplier pages and mapped to a score:
+  - Pharmaceutical grade / USP / EP / BP → 1.0
+  - GMP → 0.9
+  - Food grade / Kosher / Halal / Organic → 0.7
+  - Feed grade → 0.4
+  - Industrial grade → 0.2
+- Quality metrics extracted where available: identity confidence, assay potency, heavy metals, pesticide residues, microbial limits, moisture content, residual solvents
 
 ## How the Cost check works
 - Cost comparison done if any data on the websites of the list of suppliers directly provided
 - *List of suppliers given by us*
 
 
-
-## 2 Step:
 ## Batching
 
-- *Batching is planed for the future integrations*
-- It ensures better leverage for bette supplier leverage
-- Ensures improvement of teh quality
-- Reduces costs
+- Reduces total supplier count via a greedy set-cover algorithm
+- Assigns all BOM components to the minimum number of suppliers
+- Ensures better supplier leverage, improved quality consistency, and reduced costs
 
 
-## New API Endpoints
-- `GET /api/companies` — List all CPG companies from the database
-- `GET /api/boms` — List all BOMs (optionally filter by company_id)
-- `GET /api/boms/{product_id}` — Get BOM for a specific finished good
-- `GET /api/raw-materials` — List all raw materials with supplier mappings
-- `GET /api/substitutions` — Latest substitution graph from most recent cascade
+## API Endpoints
+
+### Sourcing
+- `GET /api/sourcing/boms` — List all BOMs
+- `GET /api/sourcing/bom/{sku}` — Get BOM for a specific finished good
+- `POST /api/sourcing/batch` — Run batching (supplier consolidation) on a BOM
+- `GET /api/sourcing/analyze/{finished_good_id}` — Full sourcing analysis for a product
+
+### Compliance
+- `GET /api/compliance/{product_id}` — Run compliance check for a product
+
+### Catalogue & Data
+- `GET /api/catalogue` — Product catalogue
+- `GET /api/catalogue/{product_id}` — Single product
+- `GET /api/finished-goods` — All finished goods
+- `GET /api/companies` — All CPG companies
+- `GET /api/boms` — All BOMs (optionally filter by company)
+- `GET /api/boms/{product_id}` — BOM for a specific product
+- `GET /api/raw-materials` — Raw materials with supplier mappings
+- `GET /api/suppliers` — Suppliers list
+
+### Cascade & Proposals
+- `POST /registry/trigger` — Start a cascade
+- `GET /api/progress` — Cascade progress
+- `GET /api/report` — Latest report
+- `GET /api/stream` — SSE live messages
+- `GET /api/substitutions` — Latest substitution graph
 - `GET /api/proposal` — Latest consolidated sourcing proposal
 - `GET /api/demand` — Cross-company ingredient demand aggregation
+- `GET /api/evidence` — Evidence store
+- `GET /api/evidence/{evidence_id}` — Single evidence record
+- `GET /api/cascades` — Past cascade summaries
+- `GET /api/cascades/{report_id}` — Report by ID
+
+### Trust & Reputation
+- `POST /api/trust/submit` — Submit trust signal
+- `GET /api/trust/contextual/{agent_id}` — Contextual trust for agent
+- `GET /api/reputation/summary` — Reputation summary
+- `GET /api/reputation/scores` — All reputation scores
+- `GET /api/reputation/agent/{agent_id}` — Agent reputation
+
+### Registry
+- `POST /registry/register` — Register agent
+- `GET /registry/search` — Search registry
+- `GET /registry/list` — List agents
+- `GET /registry/agent/{agent_id}` — Agent details
+- `GET /registry/health` — Health check
+- `POST /registry/deregister/{agent_id}` — Deregister agent
 
 ## Database Schema
 The SQLite database at `data/db.sqlite` contains:
-- **Company** — CPG manufacturing companies
-- **Product** — Finished goods and raw materials (with type enum)
-- **BOM / BOM_Component** — Bill of materials linking finished goods to raw materials
-- **Supplier / Supplier_Product** — Supplier catalogue and product availability mappings
-
-## Legacy Features (kept for backwards compatibility)
-
-Public URL (Cloud Run):
-- https://supply-chainer-379894741496.europe-west1.run.app
+- **Company** — CPG manufacturing companies (61)
+- **Product** — Finished goods (149) and raw materials (876)
+- **BOM / BOM_Component** — Bill of materials linking finished goods to raw materials (149 BOMs)
+- **Supplier / Supplier_Product** — Supplier catalogue (40 suppliers, 1,633 supplier–product links)
 
 ## Repository Structure
 - `backend/` — FastAPI app, services, agents, schemas
 - `frontend/` — React (Vite) UI
-- `run.py` — dev runner for backend (and optional UI notes)
+- `run.py` — Dev runner for backend
+- `notebook.ipynb` — Interactive demo of DB queries and batching
 
 ## Requirements
-- Python 3.11+ (3.12 OK)
+- Python 3.14+
 - Node.js 20+ (for Vite)
-- Docker (optional, for containerized deploy)
+- Docker (optional, for containerised deploy)
 
 ## Environment Variables
 Create a `.env` in the repo root or set env vars in your shell:
@@ -122,8 +158,8 @@ Required for AI features:
 Optional:
 - `SERVE_FRONTEND=true` — serve built frontend from backend (for Docker/Cloud Run)
 - `VITE_API_BASE_URL` — frontend API base (only needed if decoupled)
-- `AGENT_PROTOCOL_SECRET` — HMAC signing for agent protocol (optional)
-- `ENABLE_EXTERNAL_AGENT_TRANSPORT=true` — send protocol messages over HTTP (optional)
+- `AGENT_PROTOCOL_SECRET` — HMAC signing for agent protocol
+- `ENABLE_EXTERNAL_AGENT_TRANSPORT=true` — send protocol messages over HTTP
 - `ENABLE_EXTERNAL_ENRICHMENT=true` — enrich ingredient data from OpenFoodFacts/ECHA (default: true)
 
 ## Local Development (Backend + Frontend)
@@ -139,9 +175,6 @@ python run.py
 ```
 
 Backend will run at `http://localhost:8000`.
-
-
-The result is a structured, evidence-based assessment of each raw material using verified supplier data and rule-based compliance signals.
 
 ### 2) Frontend (React)
 ```bash
@@ -189,16 +222,6 @@ gcloud run deploy supply-chainer \
   --allow-unauthenticated \
   --set-env-vars SERVE_FRONTEND=true,OPENAI_API_KEY=YOUR_KEY
 ```
-
-## Key API Endpoints
-- `POST /registry/trigger` — start a cascade
-- `GET /api/progress` — cascade progress
-- `GET /api/report` — latest report
-- `GET /api/stream` — SSE live messages
-- `GET /api/catalogue` — product catalogue
-- `GET /api/suppliers` — suppliers list
-- `GET /api/cascades` — past cascade summaries
-- `GET /api/cascades/{report_id}` — report by id
 
 ## Notes
 - The frontend can run decoupled or served from the backend (Docker/Cloud Run).
