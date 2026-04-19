@@ -1,228 +1,263 @@
 Google Drive: https://drive.google.com/drive/folders/12f9w-at7ATn9lE_qTII1d3ehcfLkXlkU?usp=drive_link
 
-# Supply Chainer — Agnes AI Supply Chain Manager
+# Agnes — AI Supply Chain Manager
 CPG Ingredient Consolidation & Substitution Intelligence
 
 ## Overview
-Agnes is an AI-native supply chain manager for CPG (Consumer Packaged Goods) companies. It:
-- Loads ingredient BOMs from a SQLite database (multiple companies and products)
-- Analyses cross-company raw material demand to identify consolidation opportunities
-- Uses LLM-based reasoning to detect functionally equivalent ingredient substitutions
-- Validates substitution candidates against food regulations (EU 1169/2011, Codex HACCP)
-- Generates consolidated sourcing proposals with evidence trails and tradeoff analysis
-- Scores and ranks suppliers based on consolidation coverage and trust
-- Live agent messaging via SSE
-- Trust/reputation scoring that evolves with each cascade
 
+Agnes is an AI-native supply chain manager for CPG supplement companies. It connects raw-material suppliers with supplement manufacturers across three core workflows:
 
-## How the compliance check works
+- **Batching** — minimise the number of suppliers needed to fulfil a product's full ingredient list
+- **Compliance checking** — validate raw materials against supplier evidence and food regulations
+- **Alternative finding** — detect functionally equivalent ingredient substitutions across companies
 
-The compliance check evaluates raw materials of a finished product by combining internal database data with verified supplier website evidence.
+## System Architecture
 
-### Step-by-step logic
+```mermaid
+graph TB
+    subgraph Browser["Browser"]
+        FE["React 18 + Vite\nTypeScript + Tailwind"]
+    end
 
-1. **Load raw materials from BOM**
-   - The system retrieves all raw materials used in a finished product via the BOM structure.
+    subgraph Docker["Docker Container / Cloud Run"]
+        subgraph Backend["FastAPI Backend :8000"]
+            API["11 API Routers"]
+            SVC["Services Layer\n30+ modules"]
+            LLM["Gemini 2.5 Flash Lite\nLLM Reasoning"]
+        end
+        DB[("SQLite\ndata/db.sqlite")]
+        CACHE["JSON Caches\nevidence · classifications\ncascade history"]
+    end
 
-2. **Identify suppliers**
-   - For each raw material, all linked suppliers are loaded from the database.
+    subgraph External["External Services"]
+        GEMINI["Google Generative AI\nGemini API"]
+        OFF["OpenFoodFacts API"]
+        ECHA["ECHA Regulatory DB"]
+        WEB["Web Search\nDuckDuckGo / Tavily / SerpAPI"]
+        SUPPLIER["Supplier Websites\n(scraped)"]
+    end
 
-3. **Normalize ingredient names**
-   - Raw material SKUs are cleaned and converted into readable ingredient names.
-   - This enables consistent matching against external data sources.
+    Browser -- "HTTP + SSE\n/api/* /registry/*" --> Backend
+    FE -- "Vite proxy (dev)\nor bundled (prod)" --> API
+    API --> SVC
+    SVC --> DB
+    SVC --> CACHE
+    SVC --> LLM
+    LLM --> GEMINI
+    SVC --> OFF
+    SVC --> ECHA
+    SVC --> WEB
+    SVC --> SUPPLIER
+```
 
-4. **Validate suppliers against allowlist**
-   - Each supplier is checked against a predefined allowlist.
-   - If a match is found, the supplier is linked to a known official domain and URL.
+## Cascade Orchestration
 
-5. **Fetch supplier website data**
-   - Only pre-approved supplier URLs are accessed.
-   - HTML content is cleaned and converted into searchable text.
+A full Agnes cascade is triggered via `POST /registry/trigger` and runs 12 sequential steps, streaming live events to the frontend via SSE:
 
-6. **Build search terms**
-   - The system generates search terms based on:
-     - full ingredient name
-     - individual meaningful tokens from the name
+1. **Init** — load all companies, BOMs, suppliers; register agents in-memory
+2. **Demand Analysis** — aggregate cross-company raw material demand
+3. **Substitution Graph** — find alternative raw materials using Gemini equivalence scoring
+4. **Enrichment** — enrich candidates via OpenFoodFacts, ECHA, and web search
+5. **Compliance** — EU 14 allergens, additives, restricted substances, Gemini validation
+6. **Consolidation** — group SKUs by optimal supplier, minimise supplier count
+7. **Tradeoffs** — cost / lead-time / compliance balance via Gemini synthesis
+8. **Evidence** — compile attribution trails (supplier · web · regulatory · LLM)
+9. **Reputation** — evolve trust scores in the supplier ledger
+10. **Reporting** — dashboard data, recommendations, risk alerts
+11. **Discovery** — agent-based supplier search via Agent Protocol HTTP transport
+12. **Intelligence** — generate ESG / risk / policy signals
 
-7. **Extract evidence from supplier pages**
-   - The system scans the page text for:
-     - ingredient name matches
-     - predefined evidence keywords (allergens, quality indicators, composition terms)
-   - Relevant text snippets are extracted around matches for context.
-
-8. **Match with regulations**
-   - Check is made against **EU_FIC_1169_2011** (Regulation (EU) No 1169/2011 — food information to consumers) and **CODEX_GPFH_HACCP** (Codex General Principles of Food Hygiene)
-
-9. **Assign compliance status**
-   - The final status is determined based on:
-     - supplier allowlist presence
-     - existence and strength of external evidence
-     - detected regulatory relevance signals
-
-## How the Quality check works
-
-- Quality grade is extracted from supplier pages and mapped to a score:
-  - Pharmaceutical grade / USP / EP / BP → 1.0
-  - GMP → 0.9
-  - Food grade / Kosher / Halal / Organic → 0.7
-  - Feed grade → 0.4
-  - Industrial grade → 0.2
-- Quality metrics extracted where available: identity confidence, assay potency, heavy metals, pesticide residues, microbial limits, moisture content, residual solvents
-
-## How the Cost check works
-- Cost comparison done if any data on the websites of the list of suppliers directly provided
-- *List of suppliers given by us*
-
+Each step emits `LiveMessage` events to `/api/stream`. Cascade reports are persisted to `data/cascade_history.json`. If trust/risk thresholds are exceeded, the cascade pauses and waits for human response via `POST /api/escalation/respond`.
 
 ## Batching
 
-- Reduces total supplier count via a greedy set-cover algorithm
-- Assigns all BOM components to the minimum number of suppliers
-- Ensures better supplier leverage, improved quality consistency, and reduced costs
+The batching feature is accessible directly from the Sourcing UI without running a full cascade.
 
+- Select any finished good from the product dropdown
+- Set per-ingredient constraints (cost floor/ceiling, min purity, min quality score)
+- Agnes runs a greedy set-cover algorithm and returns multiple ranked supplier combinations
+- Each alternative shows supplier count, coverage %, estimated cost, and quality score
+- Deltas vs the recommended option are shown for each alternative
+- Constraints can be exported/imported as CSV
+
+## Compliance Checker
+
+The standalone compliance checker (`backend/service_compliance_checker/`) evaluates raw materials for a finished product:
+
+1. Load raw-material BOM components from the database
+2. Identify all suppliers linked to each raw material
+3. Normalize SKU names into readable ingredient names
+4. Check each supplier against a predefined allowlist (8 suppliers with known official domains)
+5. Scrape only the allowlisted supplier pages for evidence
+6. Extract evidence terms: allergens, animal/plant origin, quality certifications, warning terms
+7. Match regulations based on detected terms:
+   - **EU_FIC_1169_2011** (EU No 1169/2011 — food information / allergen labelling) triggered by allergen terms
+   - **CODEX_GPFH_HACCP** (Codex General Principles of Food Hygiene) triggered by hazard terms
+8. Return per-ingredient status: `VALID_RAW_MATERIAL`, `RISKY_RAW_MATERIAL`, or `INSUFFICIENT_EVIDENCE`
+
+Allowlisted suppliers: BulkSupplements, Capsuline, Custom Probiotics, FeedsForLess, PureBulk, Source-Omega, Spectrum Chemical, Trace Minerals.
+
+## Database
+
+SQLite at `data/db.sqlite`:
+
+| Entity | Count |
+|---|---|
+| Companies | 61 |
+| Suppliers | 40 |
+| Raw materials | 876 |
+| Finished goods | 149 |
+| BOMs | 149 |
+| Supplier–product links | 1,633 |
+
+Schema: `Company`, `Product` (type: `finished-good` / `raw-material`), `BOM`, `BOM_Component`, `Supplier`, `Supplier_Product`.
+
+## Agent Protocols
+
+Agnes supports three transport protocols for inter-agent communication:
+
+- **HTTP/JSON** — default agent protocol (`POST /agent/{agent_id}`)
+- **MCP (JSON-RPC 2.0)** — tool definitions via `POST /mcp/{agent_id}`; methods: `tools/list`, `tools/call`
+- **A2A (Google Agent-to-Agent)** — agent cards + task lifecycle via `GET /a2a/{agent_id}/agent-card` and `POST /a2a/{agent_id}`
 
 ## API Endpoints
 
 ### Sourcing
-- `GET /api/sourcing/boms` — List all BOMs
-- `GET /api/sourcing/bom/{sku}` — Get BOM for a specific finished good
-- `POST /api/sourcing/batch` — Run batching (supplier consolidation) on a BOM
-- `GET /api/sourcing/analyze/{finished_good_id}` — Full sourcing analysis for a product
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/api/sourcing/boms` | List all BOMs |
+| `GET` | `/api/sourcing/bom/{sku}` | BOM components + stats for a SKU |
+| `POST` | `/api/sourcing/batch` | Run batching with optional constraints |
+| `GET` | `/api/sourcing/analyze/{finished_good_id}` | Full sourcing analysis |
 
 ### Compliance
-- `GET /api/compliance/{product_id}` — Run compliance check for a product
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/api/compliance/{product_id}` | Run compliance check for a product |
 
 ### Catalogue & Data
-- `GET /api/catalogue` — Product catalogue
-- `GET /api/catalogue/{product_id}` — Single product
-- `GET /api/finished-goods` — All finished goods
-- `GET /api/companies` — All CPG companies
-- `GET /api/boms` — All BOMs (optionally filter by company)
-- `GET /api/boms/{product_id}` — BOM for a specific product
-- `GET /api/raw-materials` — Raw materials with supplier mappings
-- `GET /api/suppliers` — Suppliers list
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/api/catalogue` | Product catalogue |
+| `GET` | `/api/finished-goods` | All finished goods |
+| `GET` | `/api/companies` | All companies |
+| `GET` | `/api/boms` | All BOMs |
+| `GET` | `/api/boms/{product_id}` | BOM for a product |
+| `GET` | `/api/raw-materials` | Raw materials with supplier mappings |
+| `GET` | `/api/suppliers` | Supplier list |
 
-### Cascade & Proposals
-- `POST /registry/trigger` — Start a cascade
-- `GET /api/progress` — Cascade progress
-- `GET /api/report` — Latest report
-- `GET /api/stream` — SSE live messages
-- `GET /api/substitutions` — Latest substitution graph
-- `GET /api/proposal` — Latest consolidated sourcing proposal
-- `GET /api/demand` — Cross-company ingredient demand aggregation
-- `GET /api/evidence` — Evidence store
-- `GET /api/evidence/{evidence_id}` — Single evidence record
-- `GET /api/cascades` — Past cascade summaries
-- `GET /api/cascades/{report_id}` — Report by ID
+### Cascade
+| Method | Path | Description |
+|---|---|---|
+| `POST` | `/registry/trigger` | Start a cascade |
+| `GET` | `/api/stream` | SSE live message feed |
+| `GET` | `/api/progress` | Cascade progress |
+| `GET` | `/api/report` | Latest cascade report |
+| `GET` | `/api/substitutions` | Latest substitution graph |
+| `GET` | `/api/proposal` | Latest consolidation proposal |
+| `GET` | `/api/demand` | Cross-company ingredient demand |
+| `GET` | `/api/evidence` | Evidence store |
+| `GET` | `/api/cascades` | Past cascade summaries |
+| `GET` | `/api/cascades/{report_id}` | Report by ID |
 
 ### Trust & Reputation
-- `POST /api/trust/submit` — Submit trust signal
-- `GET /api/trust/contextual/{agent_id}` — Contextual trust for agent
-- `GET /api/reputation/summary` — Reputation summary
-- `GET /api/reputation/scores` — All reputation scores
-- `GET /api/reputation/agent/{agent_id}` — Agent reputation
-
-### Registry
-- `POST /registry/register` — Register agent
-- `GET /registry/search` — Search registry
-- `GET /registry/list` — List agents
-- `GET /registry/agent/{agent_id}` — Agent details
-- `GET /registry/health` — Health check
-- `POST /registry/deregister/{agent_id}` — Deregister agent
-
-## Database Schema
-The SQLite database at `data/db.sqlite` contains:
-- **Company** — CPG manufacturing companies (61)
-- **Product** — Finished goods (149) and raw materials (876)
-- **BOM / BOM_Component** — Bill of materials linking finished goods to raw materials (149 BOMs)
-- **Supplier / Supplier_Product** — Supplier catalogue (40 suppliers, 1,633 supplier–product links)
+| Method | Path | Description |
+|---|---|---|
+| `POST` | `/api/trust/submit` | Submit trust signal |
+| `GET` | `/api/trust/contextual/{agent_id}` | Contextual trust for agent |
+| `GET` | `/api/reputation/summary` | Reputation summary |
+| `GET` | `/api/reputation/scores` | All reputation scores |
 
 ## Repository Structure
-- `backend/` — FastAPI app, services, agents, schemas
-- `frontend/` — React (Vite) UI
-- `run.py` — Dev runner for backend
-- `notebook.ipynb` — Interactive demo of DB queries and batching
+
+```
+backend/
+  ├─ main.py                     FastAPI app, router registration
+  ├─ db.py                       Core SQLite data layer (batch, check_compliance)
+  ├─ agents/                     LLM agents (suppliers, compliance, logistics, MCP, A2A)
+  ├─ services/
+  │   ├─ cascade_service.py      12-step cascade orchestrator
+  │   ├─ cascade_steps/          One module per cascade step
+  │   ├─ sourcing/               Batching pipeline, supplier registry, subagents
+  │   └─ retrieval/              OpenFoodFacts, ECHA, web search, supplier scraping
+  ├─ controllers/                FastAPI route handlers (13 routers)
+  ├─ adapters/                   MCP, A2A, OpenAI client adapters
+  └─ service_compliance_checker/ Standalone raw-material compliance service
+
+frontend/
+  ├─ src/pages/Sourcing.tsx      Batching UI with constraint editor
+  ├─ src/pages/AnalysisView.tsx  Cascade analysis view
+  ├─ src/components/             ComplianceDialog, EvidencePanel, VariantCard, ...
+  └─ src/api/client.ts           API client
+
+sourcing/pipeline/               Data enrichment scripts
+  ├─ scrape_suppliers.py         Scrapes supplier product pages
+  ├─ text2product.py             Gemini extraction (prices, purity, quality metrics)
+  ├─ filter_products.py          Composable filters (price, purity, quality score)
+  └─ evaluate.py                 LLM-as-judge evaluation
+
+diagrams/                        Mermaid architecture diagrams (8 diagrams)
+data/db.sqlite                   SQLite database
+```
 
 ## Requirements
-- Python 3.14+
-- Node.js 20+ (for Vite)
-- Docker (optional, for containerised deploy)
+
+- Python 3.14
+- Node.js 20+
+- Docker (optional)
 
 ## Environment Variables
-Create a `.env` in the repo root or set env vars in your shell:
 
-Required for AI features:
-- `OPENAI_API_KEY` — OpenAI API key
-- `SQLITE_DB_PATH` — Path to SQLite database (default: `data/db.sqlite`)
+Create a `.env` in the repo root:
+
+```
+GEMINI_API_KEY=...           # Required — Gemini 2.5 Flash Lite
+OPENAI_API_KEY=...           # Required — OpenAI agents
+SQLITE_DB_PATH=data/db.sqlite
+```
 
 Optional:
-- `SERVE_FRONTEND=true` — serve built frontend from backend (for Docker/Cloud Run)
-- `VITE_API_BASE_URL` — frontend API base (only needed if decoupled)
-- `AGENT_PROTOCOL_SECRET` — HMAC signing for agent protocol
-- `ENABLE_EXTERNAL_AGENT_TRANSPORT=true` — send protocol messages over HTTP
-- `ENABLE_EXTERNAL_ENRICHMENT=true` — enrich ingredient data from OpenFoodFacts/ECHA (default: true)
+```
+SERVE_FRONTEND=true                    # Serve built frontend from backend
+VITE_API_BASE_URL=http://localhost:8000
+AGENT_PROTOCOL_SECRET=...              # HMAC signing for agent protocol
+ENABLE_EXTERNAL_AGENT_TRANSPORT=true   # Send protocol messages over HTTP
+ENABLE_EXTERNAL_ENRICHMENT=true        # Enrich via OpenFoodFacts/ECHA (default: true)
+```
 
-## Local Development (Backend + Frontend)
+## Local Development
 
-### 1) Backend (FastAPI)
 ```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-
-pip install -r backend/requirements.txt
+# Backend + frontend (starts both)
 python run.py
+# Backend: http://localhost:8000
+# Frontend: http://localhost:5173
+
+# Frontend only
+cd frontend && npm install && npm run dev
+
+# Backend only
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --reload
 ```
 
-Backend will run at `http://localhost:8000`.
+## Docker
 
-### 2) Frontend (React)
 ```bash
-cd frontend
-npm install
-npm run dev
+docker build -t agnes .
+docker run --rm -e PORT=8080 -e SERVE_FRONTEND=true \
+  -e GEMINI_API_KEY=YOUR_KEY -p 8080:8080 agnes
+# http://localhost:8080
 ```
 
-Frontend will run at `http://localhost:5173`.
+## Cloud Run
 
-If you want the frontend to call a different backend:
-```bash
-VITE_API_BASE_URL=http://localhost:8000 npm run dev
-```
-
-## Docker (Single Container)
-
-Build and run:
-```bash
-docker build -t supply-chainer .
-docker run --rm -e PORT=8080 -e SERVE_FRONTEND=true -e OPENAI_API_KEY=YOUR_KEY -p 8080:8080 supply-chainer
-```
-
-Open:
-- `http://localhost:8080/` (frontend)
-- `http://localhost:8080/docs` (API)
-
-## Cloud Run (Single Container)
-
-Enable APIs:
 ```bash
 gcloud services enable run.googleapis.com cloudbuild.googleapis.com
-```
-
-Build & push:
-```bash
-gcloud builds submit --tag gcr.io/PROJECT_ID/supply-chainer
-```
-
-Deploy:
-```bash
-gcloud run deploy supply-chainer \
-  --image gcr.io/PROJECT_ID/supply-chainer \
+gcloud builds submit --tag gcr.io/PROJECT_ID/agnes
+gcloud run deploy agnes \
+  --image gcr.io/PROJECT_ID/agnes \
   --region europe-west1 \
   --allow-unauthenticated \
-  --set-env-vars SERVE_FRONTEND=true,OPENAI_API_KEY=YOUR_KEY
+  --set-env-vars SERVE_FRONTEND=true,GEMINI_API_KEY=YOUR_KEY
 ```
-
-## Notes
-- The frontend can run decoupled or served from the backend (Docker/Cloud Run).
-- `0.0.0.0` is a bind address — use `http://localhost:PORT` in your browser.
