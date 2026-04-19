@@ -125,7 +125,39 @@ The compliance check evaluates raw materials of a finished product by combining 
 
 The result is a structured, evidence-based assessment of each raw material using verified supplier data and rule-based compliance signals.
 
+## How the quality check works
 
+The quality check validates the physical, microbiological, and regulatory specifications of supplier raw materials by extracting data from Certificates of Analysis (CoA), Allergen statements, and dietary certifications.
+
+### Step-by-step logic
+
+1. **Ingest supplier quality documents**
+   - The system loads required documentation, including Certificates of Analysis, Allergen Free declarations, and Halal or Kosher certificates
+
+2. **Extract physical and microbiological specifications**
+   - Parses the CoA to verify the batch meets acceptable limits like USP standards
+   - Checks physical characteristics such as "Loss on drying" and "Disintegration"
+   - Validates the explicit absence of pathogens such as Escherichia Coli and Salmonella
+
+3. **Verify storage constraints**
+   - Confirms environmental parameters for transport and storage
+   - Ensures temperatures of 15°C-25°C and relative humidity between 35%-65% are maintained
+
+4. **Authenticate dietary certifications**
+   - Extracts validity dates and product scopes
+   - Verifies that required Kosher and Halal certificates are currently active for the specific ingredients
+
+5. **Confirm allergen and formulation constraints**
+   - Ensures the product is explicitly marked "PRESERVATIVE FREE"
+   - Parses Allergen Free certificates to guarantee the absence of EU-regulated allergens (like wheat, dairy, and peanuts)
+
+6. **Assign final quality status**
+   - The final approval status is granted only if:
+     - analytical values pass
+     - dietary certificates are active
+     - comprehensive allergen-free guarantees are verified
+
+---
 
 ### 2) Frontend (React)
 ```bash
