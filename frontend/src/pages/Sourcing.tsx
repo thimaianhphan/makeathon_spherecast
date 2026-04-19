@@ -3,12 +3,12 @@ import { AppLayout } from "@/components/AppLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
 import {
-  Download, Upload, Sparkles, Leaf, Loader2,
-  TrendingDown, TrendingUp, Users,
+  Download, Upload, Sparkles, Leaf, Loader2, TrendingDown, TrendingUp, Users,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -84,7 +84,7 @@ const parseCsv = (text: string): string[][] => {
   return rows.filter(r => r.some(cell => cell.trim()));
 };
 
-// ── UI atoms ──────────────────────────────────────────────────────────────────
+// ── Palette ───────────────────────────────────────────────────────────────────
 
 const palette = [
   "bg-blue-100 text-blue-800", "bg-purple-100 text-purple-800",
@@ -92,14 +92,12 @@ const palette = [
   "bg-pink-100 text-pink-800", "bg-indigo-100 text-indigo-800",
 ];
 
-const Th = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <th className={`px-3 py-2.5 font-medium ${className}`}>{children}</th>
-);
+// ── Atoms ─────────────────────────────────────────────────────────────────────
 
-const CellInput = ({ value, placeholder, onChange, max }: {
+const CompactInput = ({ value, placeholder, onChange, max }: {
   value: string; placeholder: string; onChange: (v: string) => void; max?: number;
 }) => (
-  <td className="px-1 py-1 text-right">
+  <td className="px-1 py-0.5 text-right">
     <input
       inputMode="decimal" value={value} placeholder={placeholder}
       onChange={e => {
@@ -107,30 +105,101 @@ const CellInput = ({ value, placeholder, onChange, max }: {
         if (max !== undefined && v && Number(v) > max) return;
         onChange(v);
       }}
-      className="h-8 w-full rounded-md bg-transparent px-2 text-right text-sm font-mono outline-none transition-colors placeholder:text-muted-foreground/60 hover:bg-muted focus:bg-background focus:ring-2 focus:ring-ring/40"
+      className="h-7 w-full rounded bg-transparent px-2 text-right text-[11px] font-mono outline-none transition-colors placeholder:text-muted-foreground/35 hover:bg-muted focus:bg-background focus:ring-1 focus:ring-ring/40"
     />
   </td>
 );
 
+const Metric = ({ value, label }: { value: string; label: string }) => (
+  <span className="inline-flex items-baseline rounded bg-muted px-2 py-0.5 text-[11px]">
+    <span className="font-medium text-foreground">{value}</span>
+    <span className="ml-1 text-muted-foreground">{label}</span>
+  </span>
+);
+
+function QualityScore({ score }: { score: number }) {
+  const pct = Math.round(score * 100);
+  const cls = score >= 0.7 ? "text-green-600" : score >= 0.4 ? "text-amber-600" : "text-red-500";
+  return <span className={`font-mono text-[11px] ${cls}`}>{pct}%</span>;
+}
+
 function DeltaChip({ label, value, lowerIsBetter, format }: {
-  label: string; value: number | null; lowerIsBetter?: boolean;
-  format: (v: number) => string;
+  label: string; value: number | null; lowerIsBetter?: boolean; format: (v: number) => string;
 }) {
   if (value === null || value === undefined) return null;
   const good = lowerIsBetter ? value < 0 : value > 0;
   const neutral = value === 0;
   return (
-    <div className={`flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium
+    <span className={`inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[10px] font-medium
       ${neutral ? "bg-muted text-muted-foreground"
         : good ? "bg-green-50 text-green-700"
         : "bg-red-50 text-red-600"}`}>
       {!neutral && (lowerIsBetter
-        ? (value < 0 ? <TrendingDown className="w-3 h-3" /> : <TrendingUp className="w-3 h-3" />)
-        : (value > 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />))}
-      <span>{label}: {value > 0 ? "+" : ""}{format(value)}</span>
+        ? (value < 0 ? <TrendingDown className="w-2.5 h-2.5" /> : <TrendingUp className="w-2.5 h-2.5" />)
+        : (value > 0 ? <TrendingUp className="w-2.5 h-2.5" /> : <TrendingDown className="w-2.5 h-2.5" />))}
+      <span>{label} {value > 0 ? "+" : ""}{format(value)}</span>
+    </span>
+  );
+}
+
+// ── Skeleton ──────────────────────────────────────────────────────────────────
+
+function SkeletonTable() {
+  return (
+    <div className="divide-y divide-border">
+      {Array.from({ length: 9 }).map((_, i) => (
+        <div key={i} className="flex items-center gap-4 px-4 py-2.5 animate-pulse">
+          <div className="h-2 rounded bg-muted" style={{ width: `${100 + (i % 4) * 30}px` }} />
+          <div className="ml-auto flex gap-4">
+            {[52, 52, 40, 40].map((w, j) => (
+              <div key={j} className="h-2 rounded bg-muted" style={{ width: w }} />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
+
+// ── Empty states ──────────────────────────────────────────────────────────────
+
+function EmptyConstraints() {
+  return (
+    <div className="h-full flex flex-col items-center justify-center gap-3 text-center px-6">
+      <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+        <Leaf className="h-5 w-5 text-primary" />
+      </div>
+      <div>
+        <p className="text-xs font-medium text-foreground">No product selected</p>
+        <p className="mt-1 text-[11px] text-muted-foreground max-w-xs">
+          Pick a finished good from the selector above to load its ingredient list.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function EmptyAlternatives({ hasRows }: { hasRows: boolean }) {
+  return (
+    <div className="h-full flex flex-col items-center justify-center gap-3 text-center px-4">
+      <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+        <Sparkles className="w-4 h-4 text-muted-foreground" />
+      </div>
+      <div>
+        <p className="text-xs font-medium text-foreground">
+          {hasRows ? "Ready to optimise" : "Select a product first"}
+        </p>
+        <p className="mt-1 text-[11px] text-muted-foreground max-w-[200px]">
+          {hasRows
+            ? "Set constraints then click Find Suppliers"
+            : "Pick a finished good from the top bar"}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ── Alternative card ──────────────────────────────────────────────────────────
 
 function AlternativeCard({ alt, index, selected, onClick }: {
   alt: Alternative; index: number; selected: boolean; onClick: () => void;
@@ -140,68 +209,125 @@ function AlternativeCard({ alt, index, selected, onClick }: {
   const { metrics, deltas } = alt;
 
   return (
-    <button
+    <div
+      role="button"
+      tabIndex={0}
       onClick={onClick}
-      className={`w-full text-left rounded-2xl border p-4 shadow-sm transition-all
+      onKeyDown={e => (e.key === "Enter" || e.key === " ") && onClick()}
+      aria-pressed={selected}
+      className={`rounded-lg border cursor-pointer p-3 transition-all select-none
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
         ${selected
-          ? "border-primary ring-2 ring-primary/20 bg-primary/5"
-          : "bg-card hover:border-primary/40 hover:bg-muted/30"}`}
+          ? "border-primary ring-1 ring-primary/30 bg-primary/5"
+          : "border-border bg-card hover:border-primary/40 hover:bg-muted/20"}`}
     >
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-sm font-semibold">
-          Option {index + 1}
-          {index === 0 && <span className="ml-2 text-xs text-primary font-normal">recommended</span>}
-        </span>
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[11px] font-semibold text-foreground">Option {index + 1}</span>
+          {index === 0 && (
+            <span className="text-[10px] text-primary bg-primary/10 px-1.5 py-px rounded-full font-medium">
+              recommended
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
           <Users className="w-3 h-3" />
-          {metrics.supplier_count} supplier{metrics.supplier_count !== 1 ? "s" : ""}
+          <span>{metrics.supplier_count} supplier{metrics.supplier_count !== 1 ? "s" : ""}</span>
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-1 mb-3">
+      <div className="flex flex-wrap gap-1 mb-2">
         {alt.suppliers.map(s => (
-          <Badge key={s} className={`text-xs ${colors[s]}`}>{s}</Badge>
+          <Badge key={s} className={`text-[10px] px-1.5 py-px leading-tight ${colors[s]}`}>{s}</Badge>
         ))}
         {alt.uncovered.length > 0 && (
-          <Badge className="text-xs bg-destructive/10 text-destructive">
+          <Badge className="text-[10px] px-1.5 py-px leading-tight bg-destructive/10 text-destructive">
             {alt.uncovered.length} uncovered
           </Badge>
         )}
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-3">
-        <div className="text-xs text-muted-foreground bg-muted rounded-lg px-2.5 py-1">
-          {metrics.coverage_pct}% covered
-        </div>
+      <div className="flex flex-wrap gap-1 mb-2">
+        <Metric value={`${metrics.coverage_pct}%`} label="covered" />
         {metrics.avg_quality !== null && (
-          <div className="text-xs text-muted-foreground bg-muted rounded-lg px-2.5 py-1">
-            quality {Math.round(metrics.avg_quality * 100)}%
-          </div>
+          <Metric value={`${Math.round(metrics.avg_quality * 100)}%`} label="quality" />
         )}
         {metrics.total_min_cost !== null && (
-          <div className="text-xs text-muted-foreground bg-muted rounded-lg px-2.5 py-1">
-            est. ${metrics.total_min_cost.toFixed(0)}
-          </div>
+          <Metric value={`$${metrics.total_min_cost.toFixed(0)}`} label="est." />
         )}
       </div>
 
       {index > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          <DeltaChip
-            label="suppliers" value={deltas.supplier_count}
-            lowerIsBetter format={v => String(v)}
-          />
-          <DeltaChip
-            label="quality" value={deltas.avg_quality}
-            format={v => `${Math.round(Math.abs(v) * 100)}pp`}
-          />
-          <DeltaChip
-            label="cost" value={deltas.total_min_cost}
-            lowerIsBetter format={v => `$${Math.abs(v).toFixed(0)}`}
-          />
+        <div className="flex flex-wrap gap-1 pt-2 border-t border-border">
+          <DeltaChip label="suppliers" value={deltas.supplier_count} lowerIsBetter format={v => `${v > 0 ? "+" : ""}${v}`} />
+          <DeltaChip label="quality" value={deltas.avg_quality} format={v => `${Math.round(Math.abs(v) * 100)}pp`} />
+          <DeltaChip label="cost" value={deltas.total_min_cost} lowerIsBetter format={v => `$${Math.abs(v).toFixed(0)}`} />
         </div>
       )}
-    </button>
+    </div>
+  );
+}
+
+// ── Constraint table ──────────────────────────────────────────────────────────
+
+interface ConstraintTableProps {
+  rows: ComponentRow[];
+  currentAlt: Alternative | null;
+  supplierColors: Record<string, string>;
+  assignmentBySku: Record<string, Assignment>;
+  updateCell: (idx: number, key: keyof ComponentRow, value: string) => void;
+}
+
+function ConstraintTable({ rows, currentAlt, supplierColors, assignmentBySku, updateCell }: ConstraintTableProps) {
+  return (
+    <table className="w-full text-xs border-collapse">
+      <thead className="sticky top-0 z-10">
+        <tr className="border-b bg-muted/80 backdrop-blur-sm text-left text-[11px] uppercase tracking-wide text-muted-foreground">
+          <th className="px-4 py-2.5 font-medium min-w-[200px]">Ingredient SKU</th>
+          <th className="px-3 py-2.5 font-medium text-right whitespace-nowrap">Cost floor $/kg</th>
+          <th className="px-3 py-2.5 font-medium text-right whitespace-nowrap">Cost ceil $/kg</th>
+          <th className="px-3 py-2.5 font-medium text-right whitespace-nowrap">Min purity</th>
+          <th className="px-3 py-2.5 font-medium text-right whitespace-nowrap">Min quality</th>
+          {currentAlt && <th className="px-3 py-2.5 font-medium">Supplier</th>}
+          {currentAlt && <th className="px-3 py-2.5 font-medium text-right">Quality</th>}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r, i) => {
+          const a = assignmentBySku[r.sku];
+          const uncovered = currentAlt?.uncovered.includes(r.sku);
+          return (
+            <tr
+              key={r.sku}
+              className="border-b last:border-b-0 transition-colors hover:bg-muted/20 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+              style={{ animationDelay: `${Math.min(i * 20, 300)}ms` }}
+            >
+              <td className="px-4 py-2 font-mono text-[11px] text-foreground">{r.sku}</td>
+              <CompactInput value={r.cost_min} placeholder={r.stats.price.min != null ? String(r.stats.price.min) : "—"} onChange={v => updateCell(i, "cost_min", v)} />
+              <CompactInput value={r.cost_max} placeholder={r.stats.price.max != null ? String(r.stats.price.max) : "—"} onChange={v => updateCell(i, "cost_max", v)} />
+              <CompactInput value={r.purity_min} placeholder={r.stats.purity.min != null ? String(r.stats.purity.min) : "—"} onChange={v => updateCell(i, "purity_min", v)} max={1} />
+              <CompactInput value={r.quality_min} placeholder={r.stats.quality.min != null ? String(r.stats.quality.min) : "—"} onChange={v => updateCell(i, "quality_min", v)} max={1} />
+              {currentAlt && (
+                <td className="px-3 py-2">
+                  {uncovered
+                    ? <Badge className="bg-destructive/10 text-destructive text-[10px] px-1.5 py-px">uncovered</Badge>
+                    : a
+                    ? <Badge className={`text-[10px] px-1.5 py-px ${supplierColors[a.supplier] ?? ""}`}>{a.supplier}</Badge>
+                    : <span className="text-[11px] text-muted-foreground">—</span>}
+                </td>
+              )}
+              {currentAlt && (
+                <td className="px-3 py-2 text-right">
+                  {a?.quality_score != null
+                    ? <QualityScore score={a.quality_score} />
+                    : <span className="font-mono text-[11px] text-muted-foreground">—</span>}
+                </td>
+              )}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 
@@ -321,170 +447,200 @@ export default function Sourcing() {
   currentAlt?.suppliers.forEach((s, i) => { supplierColors[s] = palette[i % palette.length]; });
   const assignmentBySku = Object.fromEntries((currentAlt?.assignments ?? []).map(a => [a.sku, a]));
 
+  const tableProps: ConstraintTableProps = { rows, currentAlt, supplierColors, assignmentBySku, updateCell };
+
+  const tableContent = loadingBom
+    ? <SkeletonTable />
+    : rows.length === 0
+    ? <EmptyConstraints />
+    : <ConstraintTable {...tableProps} />;
+
   return (
     <AppLayout>
-      <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 sm:py-14 space-y-6">
+      <div className="flex flex-col h-screen">
 
-        <header>
-          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Supplier Batching</h1>
-          <p className="mt-1.5 text-sm text-muted-foreground sm:text-base">
-            Lock in your bill of materials, set the guardrails, then let us find the best suppliers to fill the order.
-          </p>
-        </header>
-
-        {/* Product selector */}
-        <section className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
-          <label className="mb-2 flex items-center gap-2 text-sm font-medium">
-            <Leaf className="h-4 w-4 text-primary" /> Finished Product
-          </label>
-          <p className="mb-3 text-sm text-muted-foreground">
-            Pick a SKU and we'll pull its bill of materials below.
-          </p>
-          <Select value={selectedSku} onValueChange={handleSelect} open={selectOpen} onOpenChange={setSelectOpen}>
-            <SelectTrigger className="h-11 rounded-xl bg-background">
-              <SelectValue placeholder="Choose a finished product…" />
-            </SelectTrigger>
-            <SelectContent>
-              {boms.map(b => (
-                <SelectItem key={b.sku} value={b.sku}>
-                  <span className="font-medium">{b.company}</span>
-                  <span className="ml-2 text-xs text-muted-foreground font-mono">{b.sku}</span>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </section>
-
-        {/* Constraint editor */}
-        <section className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
-          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 className="text-base font-semibold">Ingredient constraints</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Tweak inline, or export → edit in Sheets → re-upload. Blank = no constraint.
-              </p>
-            </div>
-            <div className="flex gap-2 flex-wrap">
-              <Button variant="outline" size="sm" onClick={handleExport} className="rounded-xl">
-                <Download className="mr-1.5 h-4 w-4" /> Export CSV
-              </Button>
-              <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} className="rounded-xl">
-                <Upload className="mr-1.5 h-4 w-4" /> Upload CSV
-              </Button>
-              <input ref={fileRef} type="file" accept=".csv,text/csv" className="hidden" onChange={handleFile} />
-            </div>
+        {/* ── Top bar ─────────────────────────────────────────────────────── */}
+        <div className="flex items-center justify-between gap-3 px-4 h-12 border-b border-border shrink-0">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="text-xs font-semibold text-foreground shrink-0">Supplier Batching</span>
+            <span className="text-border shrink-0">|</span>
+            <Select value={selectedSku} onValueChange={handleSelect} open={selectOpen} onOpenChange={setSelectOpen}>
+              <SelectTrigger className="h-7 min-w-[160px] max-w-[240px] rounded-md border-border bg-background px-2 text-xs">
+                <SelectValue placeholder="Choose a product…" />
+              </SelectTrigger>
+              <SelectContent>
+                {boms.map(b => (
+                  <SelectItem key={b.sku} value={b.sku}>
+                    <span className="font-medium text-xs">{b.company}</span>
+                    <span className="ml-2 text-[11px] text-muted-foreground font-mono">{b.sku}</span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            {rows.length > 0 && !loadingBom && (
+              <span className="hidden sm:inline text-[11px] text-muted-foreground shrink-0">
+                {rows.length} ingredient{rows.length !== 1 ? "s" : ""}
+              </span>
+            )}
           </div>
 
-          {loadingBom ? (
-            <div className="flex items-center justify-center py-14 text-muted-foreground">
-              <Loader2 className="w-5 h-5 animate-spin mr-2" /> Loading components…
-            </div>
-          ) : rows.length === 0 ? (
-            <EmptyState />
-          ) : (
-            <div className="overflow-x-auto rounded-xl border">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b bg-muted/60 text-left text-xs uppercase tracking-wide text-muted-foreground">
-                    <Th className="min-w-[240px]">Ingredient SKU</Th>
-                    <Th className="text-right">Cost floor $/kg</Th>
-                    <Th className="text-right">Cost ceil $/kg</Th>
-                    <Th className="text-right">Min purity</Th>
-                    <Th className="text-right">Min quality</Th>
-                    {currentAlt && <Th>Supplier</Th>}
-                    {currentAlt && <Th className="text-right">Quality</Th>}
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((r, i) => {
-                    const a = assignmentBySku[r.sku];
-                    const uncovered = currentAlt?.uncovered.includes(r.sku);
-                    return (
-                      <tr key={r.sku} className="border-b last:border-b-0 hover:bg-muted/20">
-                        <td className="px-3 py-2 font-mono text-xs">{r.sku}</td>
-                        <CellInput value={r.cost_min} placeholder={r.stats.price.min != null ? String(r.stats.price.min) : "—"} onChange={v => updateCell(i, "cost_min", v)} />
-                        <CellInput value={r.cost_max} placeholder={r.stats.price.max != null ? String(r.stats.price.max) : "—"} onChange={v => updateCell(i, "cost_max", v)} />
-                        <CellInput value={r.purity_min} placeholder={r.stats.purity.min != null ? String(r.stats.purity.min) : "—"} onChange={v => updateCell(i, "purity_min", v)} max={1} />
-                        <CellInput value={r.quality_min} placeholder={r.stats.quality.min != null ? String(r.stats.quality.min) : "—"} onChange={v => updateCell(i, "quality_min", v)} max={1} />
-                        {currentAlt && (
-                          <td className="px-3 py-2">
-                            {uncovered
-                              ? <Badge className="bg-destructive/10 text-destructive text-xs">uncovered</Badge>
-                              : a ? <Badge className={`text-xs ${supplierColors[a.supplier] ?? ""}`}>{a.supplier}</Badge>
-                              : null}
-                          </td>
-                        )}
-                        {currentAlt && (
-                          <td className="px-3 py-2 text-right font-mono text-xs">
-                            {a?.quality_score != null
-                              ? <span className={a.quality_score >= 0.7 ? "text-green-600" : a.quality_score >= 0.4 ? "text-yellow-600" : "text-red-500"}>
-                                  {Math.round(a.quality_score * 100)}%
-                                </span>
-                              : <span className="text-muted-foreground">—</span>}
-                          </td>
-                        )}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          )}
-
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer select-none">
+          <div className="flex items-center gap-2 shrink-0">
+            {currentAlt && (
+              <>
+                <span className="hidden lg:inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium text-green-700">
+                  {currentAlt.metrics.covered} covered
+                </span>
+                {currentAlt.metrics.uncovered_count > 0 && (
+                  <span className="hidden lg:inline-flex items-center rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-medium text-red-700">
+                    {currentAlt.metrics.uncovered_count} uncovered
+                  </span>
+                )}
+              </>
+            )}
+            <label className="hidden md:flex items-center gap-1.5 text-[11px] text-muted-foreground cursor-pointer select-none">
               <Switch checked={includeIncomplete} onCheckedChange={setIncludeIncomplete} />
-              Include incomplete alternatives
+              All results
             </label>
+            <Button variant="outline" size="sm" onClick={handleExport}
+              className="hidden sm:inline-flex h-7 px-2.5 text-[11px] gap-1.5">
+              <Download className="w-3 h-3" /> Export
+            </Button>
+            <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()}
+              className="hidden sm:inline-flex h-7 px-2.5 text-[11px] gap-1.5">
+              <Upload className="w-3 h-3" /> Import
+            </Button>
+            <input ref={fileRef} type="file" accept=".csv,text/csv" className="hidden" onChange={handleFile} />
             <Button
               onClick={handleOptimize}
               disabled={!rows.length || running}
-              className="h-12 w-full sm:w-auto px-8 rounded-xl text-base font-medium shadow-sm"
+              className="h-7 px-3 text-[11px] gap-1.5"
             >
               {running
-                ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Finding suppliers…</>
-                : <><Sparkles className="mr-2 h-4 w-4" />Find Optimal Suppliers</>}
+                ? <><Loader2 className="w-3 h-3 animate-spin" />Optimising…</>
+                : <><Sparkles className="w-3 h-3" />Find Suppliers</>}
             </Button>
           </div>
-        </section>
+        </div>
 
-        {/* Alternatives */}
-        {response && response.alternatives.length > 0 && (
-          <section className="space-y-3">
-            <h2 className="text-sm font-semibold px-1">
-              {response.alternatives.length} alternative{response.alternatives.length !== 1 ? "s" : ""} found
-              <span className="ml-2 font-normal text-muted-foreground">— click to view in table above</span>
-            </h2>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {response.alternatives.map((alt, i) => (
-                <AlternativeCard
-                  key={i} alt={alt} index={i}
-                  selected={activeAlt === i}
-                  onClick={() => setActiveAlt(i)}
-                />
+        {/* ── Desktop: two-panel ──────────────────────────────────────────── */}
+        <div className="flex-1 hidden md:flex overflow-hidden">
+
+          {/* Left: constraint editor */}
+          <div className="flex-1 flex flex-col overflow-hidden border-r border-border">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-foreground">
+                Ingredient Constraints
+              </p>
+              <p className="text-[11px] text-muted-foreground">Blank = no constraint</p>
+            </div>
+            <div className="flex-1 overflow-auto">
+              {tableContent}
+            </div>
+          </div>
+
+          {/* Right: alternatives */}
+          <div className="w-[300px] shrink-0 flex flex-col overflow-hidden">
+            <div className="px-4 py-3 border-b border-border shrink-0">
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-foreground">
+                {response
+                  ? `${response.alternatives.length} alternative${response.alternatives.length !== 1 ? "s" : ""} found`
+                  : "Alternatives"}
+              </p>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-3 space-y-2">
+              {!response && !running && <EmptyAlternatives hasRows={rows.length > 0} />}
+
+              {running && (
+                <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
+                  <Loader2 className="w-5 h-5 animate-spin text-primary" />
+                  <p className="text-[11px]">Finding optimal suppliers…</p>
+                </div>
+              )}
+
+              {response?.alternatives.length === 0 && !running && (
+                <div className="h-full flex flex-col items-center justify-center gap-2 text-center px-4">
+                  <p className="text-xs font-medium text-foreground">No alternatives found</p>
+                  <p className="text-[11px] text-muted-foreground">
+                    Try enabling "All results" or relaxing constraints.
+                  </p>
+                </div>
+              )}
+
+              {response?.alternatives.map((alt, i) => (
+                <div
+                  key={i}
+                  className="motion-safe:animate-in motion-safe:fade-in motion-safe:duration-300"
+                  style={{ animationDelay: `${i * 70}ms` }}
+                >
+                  <AlternativeCard
+                    alt={alt} index={i}
+                    selected={activeAlt === i}
+                    onClick={() => setActiveAlt(i)}
+                  />
+                </div>
               ))}
             </div>
-          </section>
-        )}
-
-        {response && response.alternatives.length === 0 && (
-          <div className="rounded-2xl border bg-card p-8 text-center text-sm text-muted-foreground">
-            No valid alternatives found. Try enabling "include incomplete" or relaxing constraints.
           </div>
-        )}
+        </div>
+
+        {/* ── Mobile: tabbed ──────────────────────────────────────────────── */}
+        <div className="flex-1 md:hidden overflow-hidden">
+          <Tabs defaultValue="constraints" className="flex flex-col h-full">
+            <TabsList className="grid w-full grid-cols-2 shrink-0 rounded-none border-b border-border">
+              <TabsTrigger value="constraints" className="text-xs">Constraints</TabsTrigger>
+              <TabsTrigger value="results" className="text-xs">
+                Results{response ? ` (${response.alternatives.length})` : ""}
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="constraints" className="flex-1 overflow-hidden m-0 flex flex-col">
+              <div className="flex gap-2 p-2 border-b border-border shrink-0">
+                <Button variant="outline" size="sm" onClick={handleExport} className="h-7 flex-1 text-[11px] gap-1">
+                  <Download className="w-3 h-3" /> Export
+                </Button>
+                <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} className="h-7 flex-1 text-[11px] gap-1">
+                  <Upload className="w-3 h-3" /> Import
+                </Button>
+                <label className="flex items-center gap-1.5 text-[11px] text-muted-foreground cursor-pointer select-none px-1">
+                  <Switch checked={includeIncomplete} onCheckedChange={setIncludeIncomplete} />
+                  All
+                </label>
+              </div>
+              <div className="flex-1 overflow-x-auto overflow-y-auto">
+                {tableContent}
+              </div>
+              <div className="p-3 border-t border-border shrink-0">
+                <Button onClick={handleOptimize} disabled={!rows.length || running} className="w-full h-8 text-xs gap-1.5">
+                  {running
+                    ? <><Loader2 className="w-3 h-3 animate-spin" />Optimising…</>
+                    : <><Sparkles className="w-3 h-3" />Find Suppliers</>}
+                </Button>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="results" className="flex-1 overflow-auto m-0 p-3 space-y-2">
+              {!response && !running && <EmptyAlternatives hasRows={rows.length > 0} />}
+              {running && (
+                <div className="flex flex-col items-center justify-center h-full gap-3">
+                  <Loader2 className="w-5 h-5 animate-spin text-primary" />
+                  <p className="text-[11px] text-muted-foreground">Finding optimal suppliers…</p>
+                </div>
+              )}
+              {response?.alternatives.map((alt, i) => (
+                <div
+                  key={i}
+                  className="motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+                  style={{ animationDelay: `${i * 60}ms` }}
+                >
+                  <AlternativeCard alt={alt} index={i} selected={activeAlt === i} onClick={() => setActiveAlt(i)} />
+                </div>
+              ))}
+            </TabsContent>
+          </Tabs>
+        </div>
+
       </div>
     </AppLayout>
   );
 }
-
-const EmptyState = () => (
-  <div className="flex flex-col items-center justify-center rounded-xl border border-dashed bg-muted/40 px-6 py-14 text-center">
-    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-      <Leaf className="h-5 w-5 text-primary" />
-    </div>
-    <p className="text-sm font-medium">No product picked yet.</p>
-    <p className="mt-1 max-w-sm text-sm text-muted-foreground">
-      Choose a finished SKU above and we'll lay out its ingredients, ready for you to set cost, purity, and quality guardrails.
-    </p>
-  </div>
-);
