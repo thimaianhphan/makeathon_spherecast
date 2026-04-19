@@ -1,3 +1,4 @@
+
 # Supply Chainer — Agnes AI Supply Chain Manager
 CPG Ingredient Consolidation & Substitution Intelligence
 
@@ -11,6 +12,62 @@ Agnes is an AI-native supply chain manager for CPG (Consumer Packaged Goods) com
 - Scores and ranks suppliers based on consolidation coverage and trust
 - Live agent messaging via SSE
 - Trust/reputation scoring that evolves with each cascade
+
+
+## How the compliance check works
+
+The compliance check evaluates raw materials of a finished product by combining internal database data with verified supplier website evidence.
+
+### Step-by-step logic
+
+1. **Load raw materials from BOM**
+   - The system retrieves all raw materials used in a finished product via the BOM structure.
+
+2. **Identify suppliers**
+   - For each raw material, all linked suppliers are loaded from the database.
+
+3. **Normalize ingredient names**
+   - Raw material SKUs are cleaned and converted into readable ingredient names.
+   - This enables consistent matching against external data sources.
+
+4. **Validate suppliers against allowlist**
+   - Each supplier is checked against a predefined allowlist.
+   - If a match is found, the supplier is linked to a known official domain and URL.
+
+5. **Fetch supplier website data**
+   - Only pre-approved supplier URLs are accessed.
+   - HTML content is cleaned and converted into searchable text.
+
+6. **Build search terms**
+   - The system generates search terms based on:
+     - full ingredient name
+     - individual meaningful tokens from the name
+
+7. **Extract evidence from supplier pages**
+   - The system scans the page text for:
+     - ingredient name matches
+     - predefined evidence keywords (e.g. allergens, quality indicators, composition terms)
+   - Relevant text snippets are extracted around matches for context.
+
+8. **Match with regulations**
+   - Check is made against regulations **EU_FIC_1169_2011 and CODEX_GPFH_HACCP**
+
+9. **Assign compliance status**
+   - The final status is determined based on:
+     - supplier allowlist presence
+     - existence and strength of external evidence
+     - detected regulatory relevance signals
+
+## How the Quality check works
+
+- First most important quality certifications: 
+- Certificate of Kashruth (Kosher Certificate), Certificado Halal / Halal Certificate, Certificate of Analysis for Empty Gelatin Capsules (CoA), Certificate for Color and Flavor Capsules Formulation , Allergen Free Certificate (for empty hard bovine hide gelatin capsules)
+- The system loads required documentation, including Certificates of Analysis, Allergen Free declarations, and Halal or Kosher certificates
+- Some other checks ass Concentration of the product(active product ration)
+
+
+
+
 
 ## New API Endpoints
 - `GET /api/companies` — List all CPG companies from the database
@@ -71,57 +128,6 @@ python run.py
 
 Backend will run at `http://localhost:8000`.
 
-
-## How the compliance check works
-
-The compliance check evaluates raw materials of a finished product by combining internal database data with verified supplier website evidence.
-
-### Step-by-step logic
-
-1. **Load raw materials from BOM**
-   - The system retrieves all raw materials used in a finished product via the BOM structure.
-
-2. **Identify suppliers**
-   - For each raw material, all linked suppliers are loaded from the database.
-
-3. **Normalize ingredient names**
-   - Raw material SKUs are cleaned and converted into readable ingredient names.
-   - This enables consistent matching against external data sources.
-
-4. **Validate suppliers against allowlist**
-   - Each supplier is checked against a predefined allowlist.
-   - If a match is found, the supplier is linked to a known official domain and URL.
-
-5. **Fetch supplier website data**
-   - Only pre-approved supplier URLs are accessed.
-   - HTML content is cleaned and converted into searchable text.
-
-6. **Build search terms**
-   - The system generates search terms based on:
-     - full ingredient name
-     - individual meaningful tokens from the name
-
-7. **Extract evidence from supplier pages**
-   - The system scans the page text for:
-     - ingredient name matches
-     - predefined evidence keywords (e.g. allergens, quality indicators, composition terms)
-   - Relevant text snippets are extracted around matches for context.
-
-8. **Evaluate evidence strength**
-   - Evidence is considered stronger when:
-     - the ingredient name is clearly present
-     - additional supporting terms are detected
-
-9. **Match regulation relevance**
-   - Detected terms are mapped to regulatory categories:
-     - allergen-related terms → food information regulation relevance
-     - hazard or safety terms → hygiene and safety regulation relevance
-
-10. **Assign compliance status**
-   - The final status is determined based on:
-     - supplier allowlist presence
-     - existence and strength of external evidence
-     - detected regulatory relevance signals
 
 The result is a structured, evidence-based assessment of each raw material using verified supplier data and rule-based compliance signals.
 
