@@ -1,0 +1,14 @@
+[project]
+name = "asap"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "google-genai>=0.8.6",
+    "ipykernel>=7.2.0",
+    "google.api_core",
+    "deepeval>=3.9.7",
+]
