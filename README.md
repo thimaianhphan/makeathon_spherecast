@@ -1,6 +1,6 @@
 Google Drive: https://drive.google.com/drive/folders/12f9w-at7ATn9lE_qTII1d3ehcfLkXlkU?usp=drive_link
 
-# Agnes — AI Supply Chain Manager
+# Agnes — AI Supply Chain Manager Extension
 CPG Ingredient Consolidation & Substitution Intelligence
 
 ## Overview
@@ -19,7 +19,7 @@ graph TB
         FE["React 18 + Vite\nTypeScript + Tailwind"]
     end
 
-    subgraph Docker["Docker Container / Cloud Run"]
+    subgraph Docker["Docker Container"]
         subgraph Backend["FastAPI Backend :8000"]
             API["11 API Routers"]
             SVC["Services Layer\n30+ modules"]
@@ -56,9 +56,9 @@ A full Agnes cascade is triggered via `POST /registry/trigger` and runs 12 seque
 
 1. **Init** — load all companies, BOMs, suppliers; register agents in-memory
 2. **Demand Analysis** — aggregate cross-company raw material demand
-3. **Substitution Graph** — find alternative raw materials using Gemini equivalence scoring
+3. **Substitution Graph** — find alternative raw materials; per-candidate compliance checked via Gemini against EU 1169/2011, EU 1333/2008, EU 2018/848, EU 1829/2003
 4. **Enrichment** — enrich candidates via OpenFoodFacts, ECHA, and web search
-5. **Compliance** — EU 14 allergens, additives, restricted substances, Gemini validation
+5. **Compliance** — filter substitution candidates by compliance status (approved / needs review / rejected)
 6. **Consolidation** — group SKUs by optimal supplier, minimise supplier count
 7. **Tradeoffs** — cost / lead-time / compliance balance via Gemini synthesis
 8. **Evidence** — compile attribution trails (supplier · web · regulatory · LLM)
@@ -90,10 +90,7 @@ The standalone compliance checker (`backend/service_compliance_checker/`) evalua
 4. Check each supplier against a predefined allowlist (8 suppliers with known official domains)
 5. Scrape only the allowlisted supplier pages for evidence
 6. Extract evidence terms: allergens, animal/plant origin, quality certifications, warning terms
-7. Match regulations based on detected terms:
-   - **EU_FIC_1169_2011** (EU No 1169/2011 — food information / allergen labelling) triggered by allergen terms
-   - **CODEX_GPFH_HACCP** (Codex General Principles of Food Hygiene) triggered by hazard terms
-8. Return per-ingredient status: `VALID_RAW_MATERIAL`, `RISKY_RAW_MATERIAL`, or `INSUFFICIENT_EVIDENCE`
+7. Return per-ingredient status: `VALID_RAW_MATERIAL`, `RISKY_RAW_MATERIAL`, or `INSUFFICIENT_EVIDENCE`
 
 Allowlisted suppliers: BulkSupplements, Capsuline, Custom Probiotics, FeedsForLess, PureBulk, Source-Omega, Spectrum Chemical, Trace Minerals.
 
@@ -212,7 +209,6 @@ Create a `.env` in the repo root:
 
 ```
 GEMINI_API_KEY=...           # Required — Gemini 2.5 Flash Lite
-OPENAI_API_KEY=...           # Required — OpenAI agents
 SQLITE_DB_PATH=data/db.sqlite
 ```
 
@@ -220,9 +216,11 @@ Optional:
 ```
 SERVE_FRONTEND=true                    # Serve built frontend from backend
 VITE_API_BASE_URL=http://localhost:8000
-AGENT_PROTOCOL_SECRET=...              # HMAC signing for agent protocol
+AGENT_PROTOCOL_SECRET=...              # HMAC-SHA256 signing for agent protocol messages
 ENABLE_EXTERNAL_AGENT_TRANSPORT=true   # Send protocol messages over HTTP
 ENABLE_EXTERNAL_ENRICHMENT=true        # Enrich via OpenFoodFacts/ECHA (default: true)
+WEB_SEARCH_PROVIDER=duckduckgo         # duckduckgo | tavily | serpapi
+TAVILY_API_KEY=...                     # Required if WEB_SEARCH_PROVIDER=tavily
 ```
 
 ## Local Development
@@ -248,16 +246,4 @@ docker build -t agnes .
 docker run --rm -e PORT=8080 -e SERVE_FRONTEND=true \
   -e GEMINI_API_KEY=YOUR_KEY -p 8080:8080 agnes
 # http://localhost:8080
-```
-
-## Cloud Run
-
-```bash
-gcloud services enable run.googleapis.com cloudbuild.googleapis.com
-gcloud builds submit --tag gcr.io/PROJECT_ID/agnes
-gcloud run deploy agnes \
-  --image gcr.io/PROJECT_ID/agnes \
-  --region europe-west1 \
-  --allow-unauthenticated \
-  --set-env-vars SERVE_FRONTEND=true,GEMINI_API_KEY=YOUR_KEY
 ```
