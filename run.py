@@ -13,6 +13,7 @@ import os
 import subprocess
 import sys
 import time
+import traceback
 import webbrowser
 import uvicorn
 import threading
@@ -39,6 +40,7 @@ if __name__ == "__main__":
     frontend_dir = os.path.join(os.path.dirname(__file__), "frontend")
     frontend_process = subprocess.Popen([npm_cmd, "run", "dev"], cwd=frontend_dir)
 
+    exit_code = 0
     try:
         uvicorn.run(
             "backend.main:app",
@@ -47,8 +49,18 @@ if __name__ == "__main__":
             reload=False,
             log_level="info",
         )
+    except KeyboardInterrupt:
+        print("\n  Received Ctrl+C")
+    except SystemExit as e:
+        exit_code = e.code or 0
+        if exit_code:
+            print(f"\n  Uvicorn exited with code {exit_code}")
+    except BaseException:
+        print("\n  !!! Backend crashed — traceback below:")
+        traceback.print_exc()
+        exit_code = 1
     finally:
         if frontend_process and frontend_process.poll() is None:
             frontend_process.terminate()
         print("\n  Shutting down...")
-        sys.exit(0)
+        sys.exit(exit_code)
