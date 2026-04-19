@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 85% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 95%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 40 15% 93%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 40 90% 52%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 0 85% 46%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 40%;
+    --sidebar-primary: 0 85% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 95%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 40 15% 90%;
+    --sidebar-ring: 0 85% 46%;
+
+    /* Custom tokens */
+    --success: 160 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 40 90% 52%;
+    --warning-foreground: 0 0% 8%;
+    --info: 210 70% 50%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .ingredient-complete {
+    animation: ingredient-complete 520ms ease-out;
+  }
+
+  @keyframes ingredient-complete {
+    0% {
+      background-color: hsl(var(--accent) / 0.25);
+      transform: translateY(2px);
+    }
+    100% {
+      background-color: transparent;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ingredient-complete {
+      animation: none;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+requests
+python-dotenv
+google-genai
+pytest
+pytest-asyncio
+anyio[asyncio]
+httpx[http2]
+aiohttp
+beautifulsoup4
+tenacity
+rapidfuzz
+ddgs
