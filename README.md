@@ -65,7 +65,9 @@ The compliance check evaluates raw materials of a finished product by combining 
 - The system loads required documentation, including Certificates of Analysis, Allergen Free declarations, and Halal or Kosher certificates
 - Some other checks ass Concentration of the product(active product ration)
 
-
+## How the Quality check works
+- Cost comparison done if any data on the websites of the list of suppliers directly provided
+- List of suppliers given by us
 
 
 
