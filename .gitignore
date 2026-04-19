@@ -18,3 +18,5 @@ __pycache__/__pycache__/
 .claude/
 # Data directory (commit db.sqlite for demo; uncomment to ignore large files)
 # data/*.sqlite
+.*
+.sqlite
